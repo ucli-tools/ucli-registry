@@ -1,0 +1,92 @@
+metadata:
+  version: 1.0.0
+  last_updated: '2025-12-22'
+  description: Official registry of UCLI Tools - Professional CLI utilities for developers
+  versioning_strategy: git_commit
+apps:
+  official:
+  - name: ucli
+    repo: github.com/ucli-tools/ucli
+    description: Universal Command Line Interface Tool - Tool manager for the UCLI ecosystem
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - cli
+    - tool-manager
+    - installer
+    - bash
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: gits
+    repo: github.com/ucli-tools/gits
+    description: Git workflow automation supporting Forgejo, Gitea, and GitHub
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - git
+    - workflow
+    - automation
+    - forgejo
+    - gitea
+    - github
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: mdtexpdf
+    repo: github.com/ucli-tools/mdtexpdf
+    description: Convert Markdown documents to PDF with LaTeX quality
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - markdown
+    - pdf
+    - latex
+    - pandoc
+    - documentation
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: mdaudiobook
+    repo: github.com/ucli-tools/mdaudiobook
+    description: Convert Markdown content to audiobooks and podcasts
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - markdown
+    - audiobook
+    - tts
+    - audio
+    - podcast
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  community: []
