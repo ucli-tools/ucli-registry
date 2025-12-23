@@ -68,7 +68,16 @@ jobs:
             echo "no_changes=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create Pull Request
+      - name: Commit changes (dispatch events)
+        if: steps.changes.outputs.no_changes == 'false' && github.event_name == 'repository_dispatch'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add registry/apps.yaml
+          git commit -m "chore: update tool versions to latest commit hashes [skip ci]"
+          git push
+
+      - name: Create Pull Request (scheduled runs)
         if: steps.changes.outputs.no_changes == 'false' && github.event_name == 'schedule'
         uses: peter-evans/create-pull-request@v5
         with:
