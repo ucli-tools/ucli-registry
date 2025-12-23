@@ -89,4 +89,368 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+  - name: convft
+    repo: github.com/ucli-tools/convft
+    description: File conversion utilities for various formats
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - conversion
+    - files
+    - utilities
+    - format
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: isobootmaker
+    repo: github.com/ucli-tools/isobootmaker
+    description: Create bootable ISO images for various operating systems
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - iso
+    - bootable
+    - images
+    - os
+    - installer
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: k3scluster
+    repo: github.com/ucli-tools/k3scluster
+    description: K3s Kubernetes cluster management and deployment
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - kubernetes
+    - k3s
+    - cluster
+    - orchestration
+    - containers
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: library
+    repo: github.com/ucli-tools/library
+    description: Code library management and dependency handling
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - library
+    - dependencies
+    - packages
+    - management
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: mcluster
+    repo: github.com/ucli-tools/mcluster
+    description: Multi-cluster management for distributed systems
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - cluster
+    - distributed
+    - management
+    - orchestration
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: mdepub
+    repo: github.com/ucli-tools/mdepub
+    description: Convert Markdown documents to EPUB format
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - markdown
+    - epub
+    - ebooks
+    - conversion
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: mdtodocu
+    repo: github.com/ucli-tools/mdtodocu
+    description: Generate documentation from Markdown files
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - markdown
+    - documentation
+    - generation
+    - docs
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: monerominer
+    repo: github.com/ucli-tools/monerominer
+    description: Monero cryptocurrency mining utilities
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - cryptocurrency
+    - mining
+    - monero
+    - blockchain
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: ms2md
+    repo: github.com/ucli-tools/ms2md
+    description: Convert Microsoft Office documents to Markdown
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - conversion
+    - microsoft
+    - office
+    - markdown
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: quickdocu
+    repo: github.com/ucli-tools/quickdocu
+    description: Quick documentation generation and formatting
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - documentation
+    - quick
+    - formatting
+    - generation
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: tfbootmaker
+    repo: github.com/ucli-tools/tfbootmaker
+    description: ThreeFold grid boot image creation utilities
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - threefold
+    - boot
+    - images
+    - grid
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: tfgrid-k3s
+    repo: github.com/ucli-tools/tfgrid-k3s
+    description: ThreeFold Grid K3s integration and deployment
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - threefold
+    - k3s
+    - kubernetes
+    - grid
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: tscluster
+    repo: github.com/ucli-tools/tscluster
+    description: Time-series data cluster management
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - time-series
+    - cluster
+    - data
+    - management
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: ubungpu
+    repo: github.com/ucli-tools/ubungpu
+    description: Ubuntu GPU setup and configuration utilities
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - ubuntu
+    - gpu
+    - nvidia
+    - setup
+    - configuration
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: ubuntail
+    repo: github.com/ucli-tools/ubuntail
+    description: Ubuntu system administration and automation tools
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - ubuntu
+    - system
+    - administration
+    - automation
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: universalis
+    repo: github.com/ucli-tools/universalis
+    description: Universal system configuration and setup utilities
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - universal
+    - configuration
+    - setup
+    - system
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: xrdps
+    repo: github.com/ucli-tools/xrdps
+    description: XRDP remote desktop server management
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - remote
+    - desktop
+    - xrdp
+    - rdp
+    - server
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
+  - name: zanominer
+    repo: github.com/ucli-tools/zanominer
+    description: Zano cryptocurrency mining utilities
+    pattern: cli
+    status: production
+    maintainer: ucli-tools
+    tags:
+    - cryptocurrency
+    - mining
+    - zano
+    - blockchain
+    version: main
+    versioning:
+      primary: git_commit
+      fallback: semantic
+      auto_update: true
+    git:
+      default_branch: main
+      tracking: true
+      auto_cache_refresh: true
   community: []
