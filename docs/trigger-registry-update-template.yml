@@ -1,0 +1,20 @@
+name: Trigger Registry Update
+
+# This workflow should be copied to each UCLI tool repository
+# It triggers the registry to update when the tool is updated
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  trigger-registry-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger ucli-registry update
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.REGISTRY_UPDATE_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/ucli-tools/ucli-registry/dispatches \
+            -d '{"event_type": "tool-updated", "client_payload": {"tool": "${{ github.event.repository.name }}"}}'

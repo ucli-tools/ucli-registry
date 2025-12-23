@@ -112,6 +112,58 @@ apps:
       status: production
 ```
 
+## Real-Time Registry Updates
+
+**Registry updates automatically** when tool repositories are updated:
+
+### How It Works
+
+1. **Tool Repository**: When you push to `main` branch of a tool repo (e.g., `gits`)
+2. **Trigger Workflow**: GitHub Action in tool repo sends dispatch event to registry
+3. **Registry Update**: Registry automatically fetches latest commit hash
+4. **Version Pinning**: `ucli build gits` now installs the updated version
+
+### Setup for Tool Repositories
+
+Each official tool repository needs this workflow to enable real-time updates:
+
+```yaml
+# .github/workflows/trigger-registry-update.yml
+name: Trigger Registry Update
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  trigger-registry-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger ucli-registry update
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.REGISTRY_UPDATE_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/ucli-tools/ucli-registry/dispatches \
+            -d '{"event_type": "tool-updated", "client_payload": {"tool": "${{ github.event.repository.name }}"}}'
+```
+
+### Required Secret
+
+Add `REGISTRY_UPDATE_TOKEN` to each tool repository:
+- **Type**: Personal Access Token (classic)
+- **Scopes**: `repo` (full control of private repositories)
+- **Owner**: Repository maintainer or organization admin
+
+[Download template →](docs/trigger-registry-update-template.yml)
+
+### Benefits
+
+- ✅ **Immediate Updates**: Push changes → Available in registry within minutes
+- ✅ **Always Current**: No waiting for scheduled updates
+- ✅ **Automatic**: No manual intervention required
+- ✅ **Reliable**: Event-driven, not time-based
+
 ## Automated Validation
 
 **GitHub Actions** automatically:

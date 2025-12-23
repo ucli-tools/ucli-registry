@@ -1,9 +1,17 @@
 name: Update Tool Versions
 
 on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'registry/apps.yaml'
+      - 'scripts/update-versions.py'
+      - '.github/workflows/update-versions.yml'
+  repository_dispatch:
+    types: [tool-updated]
   schedule:
-    # Run every 6 hours: 2 AM, 8 AM, 2 PM, 8 PM UTC
-    - cron: '0 2,8,14,20 * * *'
+    # Fallback: Run daily at 2 AM UTC if dispatch fails
+    - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -11,11 +19,10 @@ on:
         required: false
         default: false
         type: boolean
-      force_update:
-        description: 'Force update even if no changes detected'
+      tool_name:
+        description: 'Specific tool to update (leave empty for all)'
         required: false
-        default: false
-        type: boolean
+        type: string
 
 permissions:
   contents: write
