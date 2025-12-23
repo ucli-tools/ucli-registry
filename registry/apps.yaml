@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-23 04:22:14 UTC
+  last_updated: 2025-12-23 04:22:39 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -17,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: 18620441115d5d2fc4fca391b7ffd3e45a468eca
+    version: e1144941309c792b1e8a179549edcdc83e53b464
     versioning:
       primary: git_commit
       fallback: semantic
@@ -27,11 +27,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:48 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on tool
-        changes'
-      commit_url: https://github.com/ucli-tools/ucli/commit/18620441115d5d2fc4fca391b7ffd3e45a468eca
-      updated_at: 2025-12-23 04:21:42 UTC
+      commit_date: 2025-12-23 04:22:16 UTC
+      commit_message: 'docs: add trailing newline to README.md'
+      commit_url: https://github.com/ucli-tools/ucli/commit/e1144941309c792b1e8a179549edcdc83e53b464
+      updated_at: 2025-12-23 04:22:36 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
@@ -122,7 +121,7 @@ apps:
     - files
     - utilities
     - format
-    version: 0dcbb0a2df4b0fea676af3a66f25415c77f42222
+    version: ab7e69a893d4107186898274568978dd2d32b2a4
     versioning:
       primary: git_commit
       fallback: semantic
@@ -132,10 +131,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:11:06 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
-      commit_url: https://github.com/ucli-tools/convft/commit/0dcbb0a2df4b0fea676af3a66f25415c77f42222
-      updated_at: 2025-12-23 04:21:42 UTC
+      commit_date: 2025-12-23 04:22:27 UTC
+      commit_message: 'docs: fix missing newline at end of README.md'
+      commit_url: https://github.com/ucli-tools/convft/commit/ab7e69a893d4107186898274568978dd2d32b2a4
+      updated_at: 2025-12-23 04:22:37 UTC
   - name: isobootmaker
     repo: github.com/ucli-tools/isobootmaker
     description: Create bootable ISO images for various operating systems
@@ -148,7 +147,7 @@ apps:
     - images
     - os
     - installer
-    version: f7661b92cb00dc90eeac383ee87312a77eff15a1
+    version: f63a6edeef8211b40ee1f060e3e2126688018d75
     versioning:
       primary: git_commit
       fallback: semantic
@@ -158,10 +157,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:54 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
-      commit_url: https://github.com/ucli-tools/isobootmaker/commit/f7661b92cb00dc90eeac383ee87312a77eff15a1
-      updated_at: 2025-12-23 04:21:42 UTC
+      commit_date: 2025-12-23 04:22:21 UTC
+      commit_message: 'docs: add trailing newline to README.md'
+      commit_url: https://github.com/ucli-tools/isobootmaker/commit/f63a6edeef8211b40ee1f060e3e2126688018d75
+      updated_at: 2025-12-23 04:22:37 UTC
   - name: k3scluster
     repo: github.com/ucli-tools/k3scluster
     description: K3s Kubernetes cluster management and deployment
@@ -199,7 +198,7 @@ apps:
     - dependencies
     - packages
     - management
-    version: 17a1f3de8fc0f874f461cf46c23e12b2457f8fad
+    version: faae069a96c35bc78450ec094e4cae7a81ddb1a2
     versioning:
       primary: git_commit
       fallback: semantic
@@ -209,10 +208,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:51 UTC
-      commit_message: 'ci: Add GitHub workflow to trigger registry updates on push'
-      commit_url: https://github.com/ucli-tools/library/commit/17a1f3de8fc0f874f461cf46c23e12b2457f8fad
-      updated_at: 2025-12-23 04:21:43 UTC
+      commit_date: 2025-12-23 04:22:19 UTC
+      commit_message: 'docs: Fix missing newline at end of README.md'
+      commit_url: https://github.com/ucli-tools/library/commit/faae069a96c35bc78450ec094e4cae7a81ddb1a2
+      updated_at: 2025-12-23 04:22:37 UTC
   - name: mcluster
     repo: github.com/ucli-tools/mcluster
     description: Multi-cluster management for distributed systems
@@ -299,7 +298,7 @@ apps:
     - mining
     - monero
     - blockchain
-    version: 84247d6d33abbd68ccf877c3862e3bdc26e6fca4
+    version: 9ba7430082b7bdfda923d1faa2ce90c492f3008a
     versioning:
       primary: git_commit
       fallback: semantic
@@ -309,11 +308,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:44 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on push
-        to main'
-      commit_url: https://github.com/ucli-tools/monerominer/commit/84247d6d33abbd68ccf877c3862e3bdc26e6fca4
-      updated_at: 2025-12-23 04:21:43 UTC
+      commit_date: 2025-12-23 04:22:13 UTC
+      commit_message: 'docs: fix missing newline at end of README.md'
+      commit_url: https://github.com/ucli-tools/monerominer/commit/9ba7430082b7bdfda923d1faa2ce90c492f3008a
+      updated_at: 2025-12-23 04:22:37 UTC
   - name: ms2md
     repo: github.com/ucli-tools/ms2md
     description: Convert Microsoft Office documents to Markdown
@@ -375,7 +373,7 @@ apps:
     - boot
     - images
     - grid
-    version: dbb4178ce578d3e42deca57e7698a109748384c4
+    version: ef37c28700e1005097e7e43e8d5c4e5cb65cdb39
     versioning:
       primary: git_commit
       fallback: semantic
@@ -385,10 +383,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:11:08 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
-      commit_url: https://github.com/ucli-tools/tfbootmaker/commit/dbb4178ce578d3e42deca57e7698a109748384c4
-      updated_at: 2025-12-23 04:21:44 UTC
+      commit_date: 2025-12-23 04:22:30 UTC
+      commit_message: 'docs: fix missing newline at end of README.md'
+      commit_url: https://github.com/ucli-tools/tfbootmaker/commit/ef37c28700e1005097e7e43e8d5c4e5cb65cdb39
+      updated_at: 2025-12-23 04:22:38 UTC
   - name: tfgrid-k3s
     repo: github.com/ucli-tools/tfgrid-k3s
     description: ThreeFold Grid K3s integration and deployment
@@ -552,7 +550,7 @@ apps:
     - mining
     - zano
     - blockchain
-    version: ff40d69aa6c38b41038bcc703d62f6e183d0b184
+    version: 3f888595e273ecc2a59fb13301fc42e7c8dba532
     versioning:
       primary: git_commit
       fallback: semantic
@@ -562,8 +560,8 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:11:02 UTC
-      commit_message: 'ci: add workflow to trigger registry updates on push to main'
-      commit_url: https://github.com/ucli-tools/zanominer/commit/ff40d69aa6c38b41038bcc703d62f6e183d0b184
-      updated_at: 2025-12-23 04:21:45 UTC
+      commit_date: 2025-12-23 04:22:24 UTC
+      commit_message: 'docs: fix missing newline at end of README.md'
+      commit_url: https://github.com/ucli-tools/zanominer/commit/3f888595e273ecc2a59fb13301fc42e7c8dba532
+      updated_at: 2025-12-23 04:22:39 UTC
   community: []
