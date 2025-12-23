@@ -150,7 +150,7 @@ jobs:
 
 ### Required Secret
 
-Add `UCLI_REGISTRY_UPDATE_TOKEN` to each tool repository:
+Add `UCLI_REGISTRY_UPDATE_TOKEN` to each tool repository: 
 
 #### **Option 1: Fine-Grained Token (Recommended)**
 - **Type**: Personal Access Token (fine-grained)
