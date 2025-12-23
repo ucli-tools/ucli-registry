@@ -150,10 +150,21 @@ jobs:
 
 ### Required Secret
 
-Add `REGISTRY_UPDATE_TOKEN` to each tool repository:
+Add `UCLI_REGISTRY_UPDATE_TOKEN` to each tool repository:
+
+#### **Option 1: Fine-Grained Token (Recommended)**
+- **Type**: Personal Access Token (fine-grained)
+- **Resource owner**: `ucli-tools` organization
+- **Repository access**: All repositories (or select specific ones)
+- **Permissions**:
+  - ✅ **Repository permissions** → **Actions** → **Read and write**
+  - ✅ **Repository permissions** → **Contents** → **Read and write**
+  - ✅ **Repository permissions** → **Metadata** → **Read**
+
+#### **Option 2: Classic Token**
 - **Type**: Personal Access Token (classic)
 - **Scopes**: `repo` (full control of private repositories)
-- **Owner**: Repository maintainer or organization admin
+- **Owner**: Organization admin
 
 [Download template →](docs/trigger-registry-update-template.yml)
 
