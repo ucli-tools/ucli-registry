@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-23 04:21:45 UTC
+  last_updated: 2025-12-23 04:22:01 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -45,7 +45,7 @@ apps:
     - forgejo
     - gitea
     - github
-    version: aa42b7d19dc342473f4b6083267dc09467f8115f
+    version: d683a00081ab2fa26b3f7145f4a04794e1e87bde
     versioning:
       primary: git_commit
       fallback: semantic
@@ -55,11 +55,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:04:21 UTC
-      commit_message: 'ci: Improve registry update workflow with better error handling
-        and debugging'
-      commit_url: https://github.com/ucli-tools/gits/commit/aa42b7d19dc342473f4b6083267dc09467f8115f
-      updated_at: 2025-12-23 04:04:37 UTC
+      commit_date: 2025-12-23 04:21:46 UTC
+      commit_message: 'docs: Fix trailing newline at end of README file'
+      commit_url: https://github.com/ucli-tools/gits/commit/d683a00081ab2fa26b3f7145f4a04794e1e87bde
+      updated_at: 2025-12-23 04:22:00 UTC
   - name: mdtexpdf
     repo: github.com/ucli-tools/mdtexpdf
     description: Convert Markdown documents to PDF with LaTeX quality
@@ -72,7 +71,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 6c8e55c5c0a63e729bd2749f8f537edf7054eb83
+    version: ed2c441086e49ff5866e2091672898ba60214cbf
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +81,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:16 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on pushes
-        to main'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/6c8e55c5c0a63e729bd2749f8f537edf7054eb83
-      updated_at: 2025-12-23 04:21:42 UTC
+      commit_date: 2025-12-23 04:21:44 UTC
+      commit_message: 'docs: add missing newline at end of README file'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/ed2c441086e49ff5866e2091672898ba60214cbf
+      updated_at: 2025-12-23 04:22:00 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -276,7 +274,7 @@ apps:
     - documentation
     - generation
     - docs
-    version: 7a170fc9f8e57eb6f5a09788e6e441da8ba408c6
+    version: 18c6eed07f0ff53e35677a327442a4b7eb97e200
     versioning:
       primary: git_commit
       fallback: semantic
@@ -286,10 +284,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:24 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
-      commit_url: https://github.com/ucli-tools/mdtodocu/commit/7a170fc9f8e57eb6f5a09788e6e441da8ba408c6
-      updated_at: 2025-12-23 04:21:43 UTC
+      commit_date: 2025-12-23 04:21:50 UTC
+      commit_message: 'docs: add trailing newline to README.md'
+      commit_url: https://github.com/ucli-tools/mdtodocu/commit/18c6eed07f0ff53e35677a327442a4b7eb97e200
+      updated_at: 2025-12-23 04:22:00 UTC
   - name: monerominer
     repo: github.com/ucli-tools/monerominer
     description: Monero cryptocurrency mining utilities
@@ -402,7 +400,7 @@ apps:
     - k3s
     - kubernetes
     - grid
-    version: b1e050794bd639e6804b032944b36df68613021f
+    version: 0c458bc5aa0f07c71b7aa5febb74e55fc63eb60d
     versioning:
       primary: git_commit
       fallback: semantic
@@ -412,11 +410,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:31 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on main
-        push'
-      commit_url: https://github.com/ucli-tools/tfgrid-k3s/commit/b1e050794bd639e6804b032944b36df68613021f
-      updated_at: 2025-12-23 04:21:44 UTC
+      commit_date: 2025-12-23 04:21:56 UTC
+      commit_message: 'docs: add blank line at end of README for proper file formatting'
+      commit_url: https://github.com/ucli-tools/tfgrid-k3s/commit/0c458bc5aa0f07c71b7aa5febb74e55fc63eb60d
+      updated_at: 2025-12-23 04:22:01 UTC
   - name: tscluster
     repo: github.com/ucli-tools/tscluster
     description: Time-series data cluster management
@@ -428,7 +425,7 @@ apps:
     - cluster
     - data
     - management
-    version: a2e498c5c63d3ac955d0e121173c2c6c0c82890f
+    version: 7e25feea391ae56e968658f5e4479334b69fceb4
     versioning:
       primary: git_commit
       fallback: semantic
@@ -438,10 +435,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:28 UTC
-      commit_message: 'ci: add workflow to trigger registry updates on push to main'
-      commit_url: https://github.com/ucli-tools/tscluster/commit/a2e498c5c63d3ac955d0e121173c2c6c0c82890f
-      updated_at: 2025-12-23 04:21:44 UTC
+      commit_date: 2025-12-23 04:21:53 UTC
+      commit_message: 'docs: add blank line at end of README file'
+      commit_url: https://github.com/ucli-tools/tscluster/commit/7e25feea391ae56e968658f5e4479334b69fceb4
+      updated_at: 2025-12-23 04:22:01 UTC
   - name: ubungpu
     repo: github.com/ucli-tools/ubungpu
     description: Ubuntu GPU setup and configuration utilities
