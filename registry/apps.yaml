@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-23 04:04:53 UTC
+  last_updated: 2025-12-23 04:21:45 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -17,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: 42bb0322031af357027f7b96db173fb8ecbf901e
+    version: 18620441115d5d2fc4fca391b7ffd3e45a468eca
     versioning:
       primary: git_commit
       fallback: semantic
@@ -27,10 +27,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 03:32:46 UTC
-      commit_message: 'feat: clone specific commit quietly and improve build logging'
-      commit_url: https://github.com/ucli-tools/ucli/commit/42bb0322031af357027f7b96db173fb8ecbf901e
-      updated_at: 2025-12-23 04:04:36 UTC
+      commit_date: 2025-12-23 04:10:48 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on tool
+        changes'
+      commit_url: https://github.com/ucli-tools/ucli/commit/18620441115d5d2fc4fca391b7ffd3e45a468eca
+      updated_at: 2025-12-23 04:21:42 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
@@ -71,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 114772f5c7ed424d7c2eb9befbebf2120f665fc9
+    version: 6c8e55c5c0a63e729bd2749f8f537edf7054eb83
     versioning:
       primary: git_commit
       fallback: semantic
@@ -81,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-18 23:15:30 UTC
-      commit_message: 'Merge pull request #12 from ucli-tools/main-symbols3'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/114772f5c7ed424d7c2eb9befbebf2120f665fc9
-      updated_at: 2025-12-23 03:18:09 UTC
+      commit_date: 2025-12-23 04:10:16 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on pushes
+        to main'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/6c8e55c5c0a63e729bd2749f8f537edf7054eb83
+      updated_at: 2025-12-23 04:21:42 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -97,7 +99,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: 2c2912817d5e7e60b09157a37e1b39f942f2c0f9
+    version: 8234c332d1256c0393885896dc7b02563df1aadf
     versioning:
       primary: git_commit
       fallback: semantic
@@ -107,10 +109,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-07-19 12:23:36 UTC
-      commit_message: refactor for simpler ux
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/2c2912817d5e7e60b09157a37e1b39f942f2c0f9
-      updated_at: 2025-12-23 03:18:09 UTC
+      commit_date: 2025-12-23 04:21:37 UTC
+      commit_message: 'docs: add trailing newline to README.md'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/8234c332d1256c0393885896dc7b02563df1aadf
+      updated_at: 2025-12-23 04:21:42 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
@@ -122,7 +124,7 @@ apps:
     - files
     - utilities
     - format
-    version: 11f8ee54b14e1b510f33dde2729e932656fca1f7
+    version: 0dcbb0a2df4b0fea676af3a66f25415c77f42222
     versioning:
       primary: git_commit
       fallback: semantic
@@ -132,10 +134,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:16:28 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/convft/commit/11f8ee54b14e1b510f33dde2729e932656fca1f7
-      updated_at: 2025-12-23 03:18:09 UTC
+      commit_date: 2025-12-23 04:11:06 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
+      commit_url: https://github.com/ucli-tools/convft/commit/0dcbb0a2df4b0fea676af3a66f25415c77f42222
+      updated_at: 2025-12-23 04:21:42 UTC
   - name: isobootmaker
     repo: github.com/ucli-tools/isobootmaker
     description: Create bootable ISO images for various operating systems
@@ -148,7 +150,7 @@ apps:
     - images
     - os
     - installer
-    version: 863c2d6293b12fc785225c0c3eae5f31abb9d825
+    version: f7661b92cb00dc90eeac383ee87312a77eff15a1
     versioning:
       primary: git_commit
       fallback: semantic
@@ -158,10 +160,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:16:37 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/isobootmaker/commit/863c2d6293b12fc785225c0c3eae5f31abb9d825
-      updated_at: 2025-12-23 03:18:09 UTC
+      commit_date: 2025-12-23 04:10:54 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
+      commit_url: https://github.com/ucli-tools/isobootmaker/commit/f7661b92cb00dc90eeac383ee87312a77eff15a1
+      updated_at: 2025-12-23 04:21:42 UTC
   - name: k3scluster
     repo: github.com/ucli-tools/k3scluster
     description: K3s Kubernetes cluster management and deployment
@@ -174,7 +176,7 @@ apps:
     - cluster
     - orchestration
     - containers
-    version: 14f5cd7fc3a8d2180772cd34592e17078ec237cf
+    version: 4ed7c7fb90d1659b3722987c27a1d0ffe9ced384
     versioning:
       primary: git_commit
       fallback: semantic
@@ -184,10 +186,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-01-10 16:34:42 UTC
-      commit_message: update readme
-      commit_url: https://github.com/ucli-tools/k3scluster/commit/14f5cd7fc3a8d2180772cd34592e17078ec237cf
-      updated_at: 2025-12-23 03:18:09 UTC
+      commit_date: 2025-12-23 04:10:34 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
+      commit_url: https://github.com/ucli-tools/k3scluster/commit/4ed7c7fb90d1659b3722987c27a1d0ffe9ced384
+      updated_at: 2025-12-23 04:21:43 UTC
   - name: library
     repo: github.com/ucli-tools/library
     description: Code library management and dependency handling
@@ -199,7 +201,7 @@ apps:
     - dependencies
     - packages
     - management
-    version: 7c8181e3c659e5fde355bc85faa3ff8f60fd9c76
+    version: 17a1f3de8fc0f874f461cf46c23e12b2457f8fad
     versioning:
       primary: git_commit
       fallback: semantic
@@ -209,10 +211,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-07-22 23:34:42 UTC
-      commit_message: 'Merge pull request #3 from ucli-tools/main-logo'
-      commit_url: https://github.com/ucli-tools/library/commit/7c8181e3c659e5fde355bc85faa3ff8f60fd9c76
-      updated_at: 2025-12-23 03:18:09 UTC
+      commit_date: 2025-12-23 04:10:51 UTC
+      commit_message: 'ci: Add GitHub workflow to trigger registry updates on push'
+      commit_url: https://github.com/ucli-tools/library/commit/17a1f3de8fc0f874f461cf46c23e12b2457f8fad
+      updated_at: 2025-12-23 04:21:43 UTC
   - name: mcluster
     repo: github.com/ucli-tools/mcluster
     description: Multi-cluster management for distributed systems
@@ -224,7 +226,7 @@ apps:
     - distributed
     - management
     - orchestration
-    version: 9df094c9f5f6e16ac14c6f0e450e72e067099c04
+    version: 234ef0f05433fff15a351541d7e80aa260d01d98
     versioning:
       primary: git_commit
       fallback: semantic
@@ -234,10 +236,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:16:41 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/mcluster/commit/9df094c9f5f6e16ac14c6f0e450e72e067099c04
-      updated_at: 2025-12-23 03:18:10 UTC
+      commit_date: 2025-12-23 04:10:40 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
+      commit_url: https://github.com/ucli-tools/mcluster/commit/234ef0f05433fff15a351541d7e80aa260d01d98
+      updated_at: 2025-12-23 04:21:43 UTC
   - name: mdepub
     repo: github.com/ucli-tools/mdepub
     description: Convert Markdown documents to EPUB format
@@ -249,7 +251,7 @@ apps:
     - epub
     - ebooks
     - conversion
-    version: 497d0f865ee5d1633985ba96a0188574c32c56ee
+    version: 8b9d7de00f71a605b5452e0866b1af45bd9d8a3c
     versioning:
       primary: git_commit
       fallback: semantic
@@ -259,10 +261,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-07-18 21:08:54 UTC
-      commit_message: update flow with pipx
-      commit_url: https://github.com/ucli-tools/mdepub/commit/497d0f865ee5d1633985ba96a0188574c32c56ee
-      updated_at: 2025-12-23 03:18:10 UTC
+      commit_date: 2025-12-23 04:21:25 UTC
+      commit_message: 'docs: add blank line at end of README'
+      commit_url: https://github.com/ucli-tools/mdepub/commit/8b9d7de00f71a605b5452e0866b1af45bd9d8a3c
+      updated_at: 2025-12-23 04:21:43 UTC
   - name: mdtodocu
     repo: github.com/ucli-tools/mdtodocu
     description: Generate documentation from Markdown files
@@ -274,7 +276,7 @@ apps:
     - documentation
     - generation
     - docs
-    version: eb28bc0eef77cf0bbf77bc8285da31ac94d0539f
+    version: 7a170fc9f8e57eb6f5a09788e6e441da8ba408c6
     versioning:
       primary: git_commit
       fallback: semantic
@@ -284,10 +286,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:16:49 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/mdtodocu/commit/eb28bc0eef77cf0bbf77bc8285da31ac94d0539f
-      updated_at: 2025-12-23 03:18:10 UTC
+      commit_date: 2025-12-23 04:10:24 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
+      commit_url: https://github.com/ucli-tools/mdtodocu/commit/7a170fc9f8e57eb6f5a09788e6e441da8ba408c6
+      updated_at: 2025-12-23 04:21:43 UTC
   - name: monerominer
     repo: github.com/ucli-tools/monerominer
     description: Monero cryptocurrency mining utilities
@@ -299,7 +301,7 @@ apps:
     - mining
     - monero
     - blockchain
-    version: 1b7c2a720ba23a75c734bfd1b8e6a67dfb9b310f
+    version: 84247d6d33abbd68ccf877c3862e3bdc26e6fca4
     versioning:
       primary: git_commit
       fallback: semantic
@@ -309,10 +311,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:16:52 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/monerominer/commit/1b7c2a720ba23a75c734bfd1b8e6a67dfb9b310f
-      updated_at: 2025-12-23 03:18:15 UTC
+      commit_date: 2025-12-23 04:10:44 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on push
+        to main'
+      commit_url: https://github.com/ucli-tools/monerominer/commit/84247d6d33abbd68ccf877c3862e3bdc26e6fca4
+      updated_at: 2025-12-23 04:21:43 UTC
   - name: ms2md
     repo: github.com/ucli-tools/ms2md
     description: Convert Microsoft Office documents to Markdown
@@ -324,7 +327,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: e4e7ef9e7c54a23cefe0d931b92474e5cb3981f5
+    version: 7d8e5a95d9722e3ef971a1cac1c38bcd265c2bcd
     versioning:
       primary: git_commit
       fallback: semantic
@@ -334,10 +337,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-05 05:45:52 UTC
-      commit_message: update image to remove unnecessary problematic size info
-      commit_url: https://github.com/ucli-tools/ms2md/commit/e4e7ef9e7c54a23cefe0d931b92474e5cb3981f5
-      updated_at: 2025-12-23 03:18:15 UTC
+      commit_date: 2025-12-23 04:21:22 UTC
+      commit_message: 'docs: fix missing newline at end of README.md'
+      commit_url: https://github.com/ucli-tools/ms2md/commit/7d8e5a95d9722e3ef971a1cac1c38bcd265c2bcd
+      updated_at: 2025-12-23 04:21:44 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
@@ -349,7 +352,7 @@ apps:
     - quick
     - formatting
     - generation
-    version: bd31f813e4eee2150a672de9d15ecc1b99534e66
+    version: ef30fadd43362662b39becf300a2bfe353c9be81
     versioning:
       primary: git_commit
       fallback: semantic
@@ -359,10 +362,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:16:56 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/quickdocu/commit/bd31f813e4eee2150a672de9d15ecc1b99534e66
-      updated_at: 2025-12-23 03:18:15 UTC
+      commit_date: 2025-12-23 04:21:28 UTC
+      commit_message: 'docs: add trailing newline to README.md'
+      commit_url: https://github.com/ucli-tools/quickdocu/commit/ef30fadd43362662b39becf300a2bfe353c9be81
+      updated_at: 2025-12-23 04:21:44 UTC
   - name: tfbootmaker
     repo: github.com/ucli-tools/tfbootmaker
     description: ThreeFold grid boot image creation utilities
@@ -374,7 +377,7 @@ apps:
     - boot
     - images
     - grid
-    version: 5db7df5b6bf11f6bb193d66820101234ef69d369
+    version: dbb4178ce578d3e42deca57e7698a109748384c4
     versioning:
       primary: git_commit
       fallback: semantic
@@ -384,10 +387,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:16:59 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/tfbootmaker/commit/5db7df5b6bf11f6bb193d66820101234ef69d369
-      updated_at: 2025-12-23 03:18:15 UTC
+      commit_date: 2025-12-23 04:11:08 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
+      commit_url: https://github.com/ucli-tools/tfbootmaker/commit/dbb4178ce578d3e42deca57e7698a109748384c4
+      updated_at: 2025-12-23 04:21:44 UTC
   - name: tfgrid-k3s
     repo: github.com/ucli-tools/tfgrid-k3s
     description: ThreeFold Grid K3s integration and deployment
@@ -399,7 +402,7 @@ apps:
     - k3s
     - kubernetes
     - grid
-    version: 31e03a7023f14205fb0fc7d1facfc2b95112d577
+    version: b1e050794bd639e6804b032944b36df68613021f
     versioning:
       primary: git_commit
       fallback: semantic
@@ -409,10 +412,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-09-19 10:27:44 UTC
-      commit_message: 'docs: add WireGuard/Mycelium compatibility note in README'
-      commit_url: https://github.com/ucli-tools/tfgrid-k3s/commit/31e03a7023f14205fb0fc7d1facfc2b95112d577
-      updated_at: 2025-12-23 03:18:15 UTC
+      commit_date: 2025-12-23 04:10:31 UTC
+      commit_message: 'ci: add GitHub workflow to trigger registry updates on main
+        push'
+      commit_url: https://github.com/ucli-tools/tfgrid-k3s/commit/b1e050794bd639e6804b032944b36df68613021f
+      updated_at: 2025-12-23 04:21:44 UTC
   - name: tscluster
     repo: github.com/ucli-tools/tscluster
     description: Time-series data cluster management
@@ -424,7 +428,7 @@ apps:
     - cluster
     - data
     - management
-    version: b2eb8198a6df2421538ca344c75c3bb29e06fb49
+    version: a2e498c5c63d3ac955d0e121173c2c6c0c82890f
     versioning:
       primary: git_commit
       fallback: semantic
@@ -434,10 +438,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:17:04 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/tscluster/commit/b2eb8198a6df2421538ca344c75c3bb29e06fb49
-      updated_at: 2025-12-23 03:18:16 UTC
+      commit_date: 2025-12-23 04:10:28 UTC
+      commit_message: 'ci: add workflow to trigger registry updates on push to main'
+      commit_url: https://github.com/ucli-tools/tscluster/commit/a2e498c5c63d3ac955d0e121173c2c6c0c82890f
+      updated_at: 2025-12-23 04:21:44 UTC
   - name: ubungpu
     repo: github.com/ucli-tools/ubungpu
     description: Ubuntu GPU setup and configuration utilities
@@ -450,7 +454,7 @@ apps:
     - nvidia
     - setup
     - configuration
-    version: a6f1ab0c3856760a82831e9168c1bfa14bb9b850
+    version: a1be8fed45b1889a5fcc419734d81d40ae856e1a
     versioning:
       primary: git_commit
       fallback: semantic
@@ -460,10 +464,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-05 01:59:50 UTC
-      commit_message: update makefile with sudo
-      commit_url: https://github.com/ucli-tools/ubungpu/commit/a6f1ab0c3856760a82831e9168c1bfa14bb9b850
-      updated_at: 2025-12-23 03:18:16 UTC
+      commit_date: 2025-12-23 04:21:30 UTC
+      commit_message: 'docs: add newline at end of README.md file'
+      commit_url: https://github.com/ucli-tools/ubungpu/commit/a1be8fed45b1889a5fcc419734d81d40ae856e1a
+      updated_at: 2025-12-23 04:21:44 UTC
   - name: ubuntail
     repo: github.com/ucli-tools/ubuntail
     description: Ubuntu system administration and automation tools
@@ -475,7 +479,7 @@ apps:
     - system
     - administration
     - automation
-    version: 0529ba9a368b1f82de2534d84d533b64dc97eb92
+    version: d2d0fffb0f0829de10b8f298a55ff130680e49a7
     versioning:
       primary: git_commit
       fallback: semantic
@@ -485,10 +489,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-05 02:00:32 UTC
-      commit_message: update makefile with sudo
-      commit_url: https://github.com/ucli-tools/ubuntail/commit/0529ba9a368b1f82de2534d84d533b64dc97eb92
-      updated_at: 2025-12-23 03:18:16 UTC
+      commit_date: 2025-12-23 04:21:40 UTC
+      commit_message: 'docs: fix trailing newline in README.md'
+      commit_url: https://github.com/ucli-tools/ubuntail/commit/d2d0fffb0f0829de10b8f298a55ff130680e49a7
+      updated_at: 2025-12-23 04:21:45 UTC
   - name: universalis
     repo: github.com/ucli-tools/universalis
     description: Universal system configuration and setup utilities
@@ -500,7 +504,7 @@ apps:
     - configuration
     - setup
     - system
-    version: 9975a9de6bbdb5ed8b0ddbf5fa8d56aaec21336a
+    version: 194caac2418b31219f1632d16ceadc31a6a06917
     versioning:
       primary: git_commit
       fallback: semantic
@@ -510,10 +514,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-07-19 15:05:35 UTC
-      commit_message: add readme in docs
-      commit_url: https://github.com/ucli-tools/universalis/commit/9975a9de6bbdb5ed8b0ddbf5fa8d56aaec21336a
-      updated_at: 2025-12-23 03:18:16 UTC
+      commit_date: 2025-12-23 04:21:33 UTC
+      commit_message: 'docs: add closing line to README'
+      commit_url: https://github.com/ucli-tools/universalis/commit/194caac2418b31219f1632d16ceadc31a6a06917
+      updated_at: 2025-12-23 04:21:45 UTC
   - name: xrdps
     repo: github.com/ucli-tools/xrdps
     description: XRDP remote desktop server management
@@ -526,7 +530,7 @@ apps:
     - xrdp
     - rdp
     - server
-    version: bc7e256dcf55b3d9d2a272a29eb5605d9e37f4e3
+    version: ce287454cee0b15412ea6ab2ff643a62a6aadea0
     versioning:
       primary: git_commit
       fallback: semantic
@@ -536,10 +540,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:17:18 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/xrdps/commit/bc7e256dcf55b3d9d2a272a29eb5605d9e37f4e3
-      updated_at: 2025-12-23 03:18:19 UTC
+      commit_date: 2025-12-23 04:10:37 UTC
+      commit_message: 'ci: add workflow to trigger registry updates on push to main'
+      commit_url: https://github.com/ucli-tools/xrdps/commit/ce287454cee0b15412ea6ab2ff643a62a6aadea0
+      updated_at: 2025-12-23 04:21:45 UTC
   - name: zanominer
     repo: github.com/ucli-tools/zanominer
     description: Zano cryptocurrency mining utilities
@@ -551,7 +555,7 @@ apps:
     - mining
     - zano
     - blockchain
-    version: 9102e24419ab0be347ef13b3beebdc98eea5f724
+    version: ff40d69aa6c38b41038bcc703d62f6e183d0b184
     versioning:
       primary: git_commit
       fallback: semantic
@@ -561,8 +565,8 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-05-01 20:17:21 UTC
-      commit_message: update
-      commit_url: https://github.com/ucli-tools/zanominer/commit/9102e24419ab0be347ef13b3beebdc98eea5f724
-      updated_at: 2025-12-23 03:18:19 UTC
+      commit_date: 2025-12-23 04:11:02 UTC
+      commit_message: 'ci: add workflow to trigger registry updates on push to main'
+      commit_url: https://github.com/ucli-tools/zanominer/commit/ff40d69aa6c38b41038bcc703d62f6e183d0b184
+      updated_at: 2025-12-23 04:21:45 UTC
   community: []
