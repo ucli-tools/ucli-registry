@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-23 03:18:19 UTC
+  last_updated: 2025-12-23 04:04:53 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -17,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: b70d90589a824011abc5dfcc454611ce62da0f46
+    version: 42bb0322031af357027f7b96db173fb8ecbf901e
     versioning:
       primary: git_commit
       fallback: semantic
@@ -27,10 +27,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 02:28:19 UTC
-      commit_message: 'feat: switch from GitHub API to UCLI Registry for tool listing'
-      commit_url: https://github.com/ucli-tools/ucli/commit/b70d90589a824011abc5dfcc454611ce62da0f46
-      updated_at: 2025-12-23 03:18:08 UTC
+      commit_date: 2025-12-23 03:32:46 UTC
+      commit_message: 'feat: clone specific commit quietly and improve build logging'
+      commit_url: https://github.com/ucli-tools/ucli/commit/42bb0322031af357027f7b96db173fb8ecbf901e
+      updated_at: 2025-12-23 04:04:36 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
@@ -44,7 +44,7 @@ apps:
     - forgejo
     - gitea
     - github
-    version: 94ff7cf365e389fa85b1d96680f0250f7cf68d48
+    version: aa42b7d19dc342473f4b6083267dc09467f8115f
     versioning:
       primary: git_commit
       fallback: semantic
@@ -54,11 +54,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-22 18:39:34 UTC
-      commit_message: 'feat: Add --suffix option to set-all command for bulk branch
-        renaming'
-      commit_url: https://github.com/ucli-tools/gits/commit/94ff7cf365e389fa85b1d96680f0250f7cf68d48
-      updated_at: 2025-12-23 03:18:08 UTC
+      commit_date: 2025-12-23 04:04:21 UTC
+      commit_message: 'ci: Improve registry update workflow with better error handling
+        and debugging'
+      commit_url: https://github.com/ucli-tools/gits/commit/aa42b7d19dc342473f4b6083267dc09467f8115f
+      updated_at: 2025-12-23 04:04:37 UTC
   - name: mdtexpdf
     repo: github.com/ucli-tools/mdtexpdf
     description: Convert Markdown documents to PDF with LaTeX quality
