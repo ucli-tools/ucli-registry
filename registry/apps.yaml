@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-23 04:29:36 UTC
+  last_updated: 2025-12-23 04:34:06 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -17,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: 1de973014e5b06490fcaecf6059c5d980eb4846b
+    version: ca58a14c934c2bd6532cec91ea032c679c66eb60
     versioning:
       primary: git_commit
       fallback: semantic
@@ -27,10 +27,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:29:11 UTC
-      commit_message: 'fix: improve registry YAML parsing for official tool names'
-      commit_url: https://github.com/ucli-tools/ucli/commit/1de973014e5b06490fcaecf6059c5d980eb4846b
-      updated_at: 2025-12-23 04:29:32 UTC
+      commit_date: 2025-12-23 04:33:46 UTC
+      commit_message: 'fix: redirect all logging output to stderr for better script
+        piping'
+      commit_url: https://github.com/ucli-tools/ucli/commit/ca58a14c934c2bd6532cec91ea032c679c66eb60
+      updated_at: 2025-12-23 04:34:03 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
