@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-23 04:22:01 UTC
+  last_updated: 2025-12-23 04:22:14 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -174,7 +174,7 @@ apps:
     - cluster
     - orchestration
     - containers
-    version: 4ed7c7fb90d1659b3722987c27a1d0ffe9ced384
+    version: 11055402cd4657faa2261e35935b498e443679f5
     versioning:
       primary: git_commit
       fallback: semantic
@@ -184,10 +184,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:34 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
-      commit_url: https://github.com/ucli-tools/k3scluster/commit/4ed7c7fb90d1659b3722987c27a1d0ffe9ced384
-      updated_at: 2025-12-23 04:21:43 UTC
+      commit_date: 2025-12-23 04:21:59 UTC
+      commit_message: 'docs: fix trailing newline in README.md'
+      commit_url: https://github.com/ucli-tools/k3scluster/commit/11055402cd4657faa2261e35935b498e443679f5
+      updated_at: 2025-12-23 04:22:12 UTC
   - name: library
     repo: github.com/ucli-tools/library
     description: Code library management and dependency handling
@@ -224,7 +224,7 @@ apps:
     - distributed
     - management
     - orchestration
-    version: 234ef0f05433fff15a351541d7e80aa260d01d98
+    version: 5623829bdde71cfec81e575c23a1633054155e33
     versioning:
       primary: git_commit
       fallback: semantic
@@ -234,10 +234,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:40 UTC
-      commit_message: 'ci: add GitHub workflow to trigger registry updates on push'
-      commit_url: https://github.com/ucli-tools/mcluster/commit/234ef0f05433fff15a351541d7e80aa260d01d98
-      updated_at: 2025-12-23 04:21:43 UTC
+      commit_date: 2025-12-23 04:22:10 UTC
+      commit_message: 'docs: fix missing newline at end of README'
+      commit_url: https://github.com/ucli-tools/mcluster/commit/5623829bdde71cfec81e575c23a1633054155e33
+      updated_at: 2025-12-23 04:22:12 UTC
   - name: mdepub
     repo: github.com/ucli-tools/mdepub
     description: Convert Markdown documents to EPUB format
@@ -527,7 +527,7 @@ apps:
     - xrdp
     - rdp
     - server
-    version: ce287454cee0b15412ea6ab2ff643a62a6aadea0
+    version: 0af8b4003b1a3e3d4756a306ea3cb9c43daada18
     versioning:
       primary: git_commit
       fallback: semantic
@@ -537,10 +537,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:10:37 UTC
-      commit_message: 'ci: add workflow to trigger registry updates on push to main'
-      commit_url: https://github.com/ucli-tools/xrdps/commit/ce287454cee0b15412ea6ab2ff643a62a6aadea0
-      updated_at: 2025-12-23 04:21:45 UTC
+      commit_date: 2025-12-23 04:22:02 UTC
+      commit_message: 'docs: add blank line at end of README'
+      commit_url: https://github.com/ucli-tools/xrdps/commit/0af8b4003b1a3e3d4756a306ea3cb9c43daada18
+      updated_at: 2025-12-23 04:22:14 UTC
   - name: zanominer
     repo: github.com/ucli-tools/zanominer
     description: Zano cryptocurrency mining utilities
