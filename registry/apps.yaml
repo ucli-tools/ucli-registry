@@ -1,13 +1,14 @@
 metadata:
   version: 1.0.0
-  last_updated: '2025-12-22'
+  last_updated: 2025-12-23 03:18:19 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
   official:
   - name: ucli
     repo: github.com/ucli-tools/ucli
-    description: Universal Command Line Interface Tool - Tool manager for the UCLI ecosystem
+    description: Universal Command Line Interface Tool - Tool manager for the UCLI
+      ecosystem
     pattern: cli
     status: production
     maintainer: ucli-tools
@@ -16,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: main
+    version: b70d90589a824011abc5dfcc454611ce62da0f46
     versioning:
       primary: git_commit
       fallback: semantic
@@ -25,6 +26,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-12-23 02:28:19 UTC
+      commit_message: 'feat: switch from GitHub API to UCLI Registry for tool listing'
+      commit_url: https://github.com/ucli-tools/ucli/commit/b70d90589a824011abc5dfcc454611ce62da0f46
+      updated_at: 2025-12-23 03:18:08 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
@@ -38,7 +44,7 @@ apps:
     - forgejo
     - gitea
     - github
-    version: main
+    version: 94ff7cf365e389fa85b1d96680f0250f7cf68d48
     versioning:
       primary: git_commit
       fallback: semantic
@@ -47,6 +53,12 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-12-22 18:39:34 UTC
+      commit_message: 'feat: Add --suffix option to set-all command for bulk branch
+        renaming'
+      commit_url: https://github.com/ucli-tools/gits/commit/94ff7cf365e389fa85b1d96680f0250f7cf68d48
+      updated_at: 2025-12-23 03:18:08 UTC
   - name: mdtexpdf
     repo: github.com/ucli-tools/mdtexpdf
     description: Convert Markdown documents to PDF with LaTeX quality
@@ -59,7 +71,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: main
+    version: 114772f5c7ed424d7c2eb9befbebf2120f665fc9
     versioning:
       primary: git_commit
       fallback: semantic
@@ -68,6 +80,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-12-18 23:15:30 UTC
+      commit_message: 'Merge pull request #12 from ucli-tools/main-symbols3'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/114772f5c7ed424d7c2eb9befbebf2120f665fc9
+      updated_at: 2025-12-23 03:18:09 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -80,7 +97,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: main
+    version: 2c2912817d5e7e60b09157a37e1b39f942f2c0f9
     versioning:
       primary: git_commit
       fallback: semantic
@@ -89,6 +106,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-07-19 12:23:36 UTC
+      commit_message: refactor for simpler ux
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/2c2912817d5e7e60b09157a37e1b39f942f2c0f9
+      updated_at: 2025-12-23 03:18:09 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
@@ -100,7 +122,7 @@ apps:
     - files
     - utilities
     - format
-    version: main
+    version: 11f8ee54b14e1b510f33dde2729e932656fca1f7
     versioning:
       primary: git_commit
       fallback: semantic
@@ -109,6 +131,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:16:28 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/convft/commit/11f8ee54b14e1b510f33dde2729e932656fca1f7
+      updated_at: 2025-12-23 03:18:09 UTC
   - name: isobootmaker
     repo: github.com/ucli-tools/isobootmaker
     description: Create bootable ISO images for various operating systems
@@ -121,7 +148,7 @@ apps:
     - images
     - os
     - installer
-    version: main
+    version: 863c2d6293b12fc785225c0c3eae5f31abb9d825
     versioning:
       primary: git_commit
       fallback: semantic
@@ -130,6 +157,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:16:37 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/isobootmaker/commit/863c2d6293b12fc785225c0c3eae5f31abb9d825
+      updated_at: 2025-12-23 03:18:09 UTC
   - name: k3scluster
     repo: github.com/ucli-tools/k3scluster
     description: K3s Kubernetes cluster management and deployment
@@ -142,7 +174,7 @@ apps:
     - cluster
     - orchestration
     - containers
-    version: main
+    version: 14f5cd7fc3a8d2180772cd34592e17078ec237cf
     versioning:
       primary: git_commit
       fallback: semantic
@@ -151,6 +183,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-01-10 16:34:42 UTC
+      commit_message: update readme
+      commit_url: https://github.com/ucli-tools/k3scluster/commit/14f5cd7fc3a8d2180772cd34592e17078ec237cf
+      updated_at: 2025-12-23 03:18:09 UTC
   - name: library
     repo: github.com/ucli-tools/library
     description: Code library management and dependency handling
@@ -162,7 +199,7 @@ apps:
     - dependencies
     - packages
     - management
-    version: main
+    version: 7c8181e3c659e5fde355bc85faa3ff8f60fd9c76
     versioning:
       primary: git_commit
       fallback: semantic
@@ -171,6 +208,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-07-22 23:34:42 UTC
+      commit_message: 'Merge pull request #3 from ucli-tools/main-logo'
+      commit_url: https://github.com/ucli-tools/library/commit/7c8181e3c659e5fde355bc85faa3ff8f60fd9c76
+      updated_at: 2025-12-23 03:18:09 UTC
   - name: mcluster
     repo: github.com/ucli-tools/mcluster
     description: Multi-cluster management for distributed systems
@@ -182,7 +224,7 @@ apps:
     - distributed
     - management
     - orchestration
-    version: main
+    version: 9df094c9f5f6e16ac14c6f0e450e72e067099c04
     versioning:
       primary: git_commit
       fallback: semantic
@@ -191,6 +233,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:16:41 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/mcluster/commit/9df094c9f5f6e16ac14c6f0e450e72e067099c04
+      updated_at: 2025-12-23 03:18:10 UTC
   - name: mdepub
     repo: github.com/ucli-tools/mdepub
     description: Convert Markdown documents to EPUB format
@@ -202,7 +249,7 @@ apps:
     - epub
     - ebooks
     - conversion
-    version: main
+    version: 497d0f865ee5d1633985ba96a0188574c32c56ee
     versioning:
       primary: git_commit
       fallback: semantic
@@ -211,6 +258,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-07-18 21:08:54 UTC
+      commit_message: update flow with pipx
+      commit_url: https://github.com/ucli-tools/mdepub/commit/497d0f865ee5d1633985ba96a0188574c32c56ee
+      updated_at: 2025-12-23 03:18:10 UTC
   - name: mdtodocu
     repo: github.com/ucli-tools/mdtodocu
     description: Generate documentation from Markdown files
@@ -222,7 +274,7 @@ apps:
     - documentation
     - generation
     - docs
-    version: main
+    version: eb28bc0eef77cf0bbf77bc8285da31ac94d0539f
     versioning:
       primary: git_commit
       fallback: semantic
@@ -231,6 +283,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:16:49 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/mdtodocu/commit/eb28bc0eef77cf0bbf77bc8285da31ac94d0539f
+      updated_at: 2025-12-23 03:18:10 UTC
   - name: monerominer
     repo: github.com/ucli-tools/monerominer
     description: Monero cryptocurrency mining utilities
@@ -242,7 +299,7 @@ apps:
     - mining
     - monero
     - blockchain
-    version: main
+    version: 1b7c2a720ba23a75c734bfd1b8e6a67dfb9b310f
     versioning:
       primary: git_commit
       fallback: semantic
@@ -251,6 +308,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:16:52 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/monerominer/commit/1b7c2a720ba23a75c734bfd1b8e6a67dfb9b310f
+      updated_at: 2025-12-23 03:18:15 UTC
   - name: ms2md
     repo: github.com/ucli-tools/ms2md
     description: Convert Microsoft Office documents to Markdown
@@ -262,7 +324,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: main
+    version: e4e7ef9e7c54a23cefe0d931b92474e5cb3981f5
     versioning:
       primary: git_commit
       fallback: semantic
@@ -271,6 +333,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-05 05:45:52 UTC
+      commit_message: update image to remove unnecessary problematic size info
+      commit_url: https://github.com/ucli-tools/ms2md/commit/e4e7ef9e7c54a23cefe0d931b92474e5cb3981f5
+      updated_at: 2025-12-23 03:18:15 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
@@ -282,7 +349,7 @@ apps:
     - quick
     - formatting
     - generation
-    version: main
+    version: bd31f813e4eee2150a672de9d15ecc1b99534e66
     versioning:
       primary: git_commit
       fallback: semantic
@@ -291,6 +358,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:16:56 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/quickdocu/commit/bd31f813e4eee2150a672de9d15ecc1b99534e66
+      updated_at: 2025-12-23 03:18:15 UTC
   - name: tfbootmaker
     repo: github.com/ucli-tools/tfbootmaker
     description: ThreeFold grid boot image creation utilities
@@ -302,7 +374,7 @@ apps:
     - boot
     - images
     - grid
-    version: main
+    version: 5db7df5b6bf11f6bb193d66820101234ef69d369
     versioning:
       primary: git_commit
       fallback: semantic
@@ -311,6 +383,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:16:59 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/tfbootmaker/commit/5db7df5b6bf11f6bb193d66820101234ef69d369
+      updated_at: 2025-12-23 03:18:15 UTC
   - name: tfgrid-k3s
     repo: github.com/ucli-tools/tfgrid-k3s
     description: ThreeFold Grid K3s integration and deployment
@@ -322,7 +399,7 @@ apps:
     - k3s
     - kubernetes
     - grid
-    version: main
+    version: 31e03a7023f14205fb0fc7d1facfc2b95112d577
     versioning:
       primary: git_commit
       fallback: semantic
@@ -331,6 +408,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-09-19 10:27:44 UTC
+      commit_message: 'docs: add WireGuard/Mycelium compatibility note in README'
+      commit_url: https://github.com/ucli-tools/tfgrid-k3s/commit/31e03a7023f14205fb0fc7d1facfc2b95112d577
+      updated_at: 2025-12-23 03:18:15 UTC
   - name: tscluster
     repo: github.com/ucli-tools/tscluster
     description: Time-series data cluster management
@@ -342,7 +424,7 @@ apps:
     - cluster
     - data
     - management
-    version: main
+    version: b2eb8198a6df2421538ca344c75c3bb29e06fb49
     versioning:
       primary: git_commit
       fallback: semantic
@@ -351,6 +433,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:17:04 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/tscluster/commit/b2eb8198a6df2421538ca344c75c3bb29e06fb49
+      updated_at: 2025-12-23 03:18:16 UTC
   - name: ubungpu
     repo: github.com/ucli-tools/ubungpu
     description: Ubuntu GPU setup and configuration utilities
@@ -363,7 +450,7 @@ apps:
     - nvidia
     - setup
     - configuration
-    version: main
+    version: a6f1ab0c3856760a82831e9168c1bfa14bb9b850
     versioning:
       primary: git_commit
       fallback: semantic
@@ -372,6 +459,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-05 01:59:50 UTC
+      commit_message: update makefile with sudo
+      commit_url: https://github.com/ucli-tools/ubungpu/commit/a6f1ab0c3856760a82831e9168c1bfa14bb9b850
+      updated_at: 2025-12-23 03:18:16 UTC
   - name: ubuntail
     repo: github.com/ucli-tools/ubuntail
     description: Ubuntu system administration and automation tools
@@ -383,7 +475,7 @@ apps:
     - system
     - administration
     - automation
-    version: main
+    version: 0529ba9a368b1f82de2534d84d533b64dc97eb92
     versioning:
       primary: git_commit
       fallback: semantic
@@ -392,6 +484,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-05 02:00:32 UTC
+      commit_message: update makefile with sudo
+      commit_url: https://github.com/ucli-tools/ubuntail/commit/0529ba9a368b1f82de2534d84d533b64dc97eb92
+      updated_at: 2025-12-23 03:18:16 UTC
   - name: universalis
     repo: github.com/ucli-tools/universalis
     description: Universal system configuration and setup utilities
@@ -403,7 +500,7 @@ apps:
     - configuration
     - setup
     - system
-    version: main
+    version: 9975a9de6bbdb5ed8b0ddbf5fa8d56aaec21336a
     versioning:
       primary: git_commit
       fallback: semantic
@@ -412,6 +509,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-07-19 15:05:35 UTC
+      commit_message: add readme in docs
+      commit_url: https://github.com/ucli-tools/universalis/commit/9975a9de6bbdb5ed8b0ddbf5fa8d56aaec21336a
+      updated_at: 2025-12-23 03:18:16 UTC
   - name: xrdps
     repo: github.com/ucli-tools/xrdps
     description: XRDP remote desktop server management
@@ -424,7 +526,7 @@ apps:
     - xrdp
     - rdp
     - server
-    version: main
+    version: bc7e256dcf55b3d9d2a272a29eb5605d9e37f4e3
     versioning:
       primary: git_commit
       fallback: semantic
@@ -433,6 +535,11 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:17:18 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/xrdps/commit/bc7e256dcf55b3d9d2a272a29eb5605d9e37f4e3
+      updated_at: 2025-12-23 03:18:19 UTC
   - name: zanominer
     repo: github.com/ucli-tools/zanominer
     description: Zano cryptocurrency mining utilities
@@ -444,7 +551,7 @@ apps:
     - mining
     - zano
     - blockchain
-    version: main
+    version: 9102e24419ab0be347ef13b3beebdc98eea5f724
     versioning:
       primary: git_commit
       fallback: semantic
@@ -453,4 +560,9 @@ apps:
       default_branch: main
       tracking: true
       auto_cache_refresh: true
+    version_info:
+      commit_date: 2025-05-01 20:17:21 UTC
+      commit_message: update
+      commit_url: https://github.com/ucli-tools/zanominer/commit/9102e24419ab0be347ef13b3beebdc98eea5f724
+      updated_at: 2025-12-23 03:18:19 UTC
   community: []
