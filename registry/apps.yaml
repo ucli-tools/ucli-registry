@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-23 04:34:06 UTC
+  last_updated: 2025-12-29 15:21:04 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -45,7 +45,7 @@ apps:
     - forgejo
     - gitea
     - github
-    version: d683a00081ab2fa26b3f7145f4a04794e1e87bde
+    version: 3992ba9331439f31c34abf6b1c1c338a918786d2
     versioning:
       primary: git_commit
       fallback: semantic
@@ -55,10 +55,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:46 UTC
-      commit_message: 'docs: Fix trailing newline at end of README file'
-      commit_url: https://github.com/ucli-tools/gits/commit/d683a00081ab2fa26b3f7145f4a04794e1e87bde
-      updated_at: 2025-12-23 04:22:00 UTC
+      commit_date: 2025-12-29 15:20:43 UTC
+      commit_message: 'feat: Add diff-all command for cross-repository branch comparison'
+      commit_url: https://github.com/ucli-tools/gits/commit/3992ba9331439f31c34abf6b1c1c338a918786d2
+      updated_at: 2025-12-29 15:21:01 UTC
   - name: mdtexpdf
     repo: github.com/ucli-tools/mdtexpdf
     description: Convert Markdown documents to PDF with LaTeX quality
