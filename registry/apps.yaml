@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-29 15:21:04 UTC
+  last_updated: 2025-12-29 15:23:44 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -45,7 +45,7 @@ apps:
     - forgejo
     - gitea
     - github
-    version: 3992ba9331439f31c34abf6b1c1c338a918786d2
+    version: f04b6773aa052c803453a15f8cf0d28c7b578788
     versioning:
       primary: git_commit
       fallback: semantic
@@ -55,10 +55,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-29 15:20:43 UTC
-      commit_message: 'feat: Add diff-all command for cross-repository branch comparison'
-      commit_url: https://github.com/ucli-tools/gits/commit/3992ba9331439f31c34abf6b1c1c338a918786d2
-      updated_at: 2025-12-29 15:21:01 UTC
+      commit_date: 2025-12-29 15:23:20 UTC
+      commit_message: 'feat: Improve diff-all command with auto-detection of default
+        branches and better help'
+      commit_url: https://github.com/ucli-tools/gits/commit/f04b6773aa052c803453a15f8cf0d28c7b578788
+      updated_at: 2025-12-29 15:23:38 UTC
   - name: mdtexpdf
     repo: github.com/ucli-tools/mdtexpdf
     description: Convert Markdown documents to PDF with LaTeX quality
