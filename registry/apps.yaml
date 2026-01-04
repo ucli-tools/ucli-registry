@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2025-12-29 15:23:44 UTC
+  last_updated: 2026-01-04 14:38:41 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: ed2c441086e49ff5866e2091672898ba60214cbf
+    version: fa0e48a8d66de19c9e5602d89f27459378cf4b0e
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:44 UTC
-      commit_message: 'docs: add missing newline at end of README file'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/ed2c441086e49ff5866e2091672898ba60214cbf
-      updated_at: 2025-12-23 04:22:00 UTC
+      commit_date: 2026-01-04 14:38:19 UTC
+      commit_message: 'feat: add support for book structure elements like preface,
+        appendices, and unnumbered chapters'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/fa0e48a8d66de19c9e5602d89f27459378cf4b0e
+      updated_at: 2026-01-04 14:38:37 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
