@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-12 22:44:13 UTC
+  last_updated: 2026-01-12 22:48:08 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -45,7 +45,7 @@ apps:
     - forgejo
     - gitea
     - github
-    version: ab20f0dfbc77feff05b55b366f6974e6a491f5f0
+    version: d9f8a31cdc904cb2a78a51791a6632783de0a208
     versioning:
       primary: git_commit
       fallback: semantic
@@ -55,11 +55,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-12 22:43:49 UTC
-      commit_message: 'feat: Add pr create-all and pr merge-all commands for batch
-        PR operations'
-      commit_url: https://github.com/ucli-tools/gits/commit/ab20f0dfbc77feff05b55b366f6974e6a491f5f0
-      updated_at: 2026-01-12 22:44:09 UTC
+      commit_date: 2026-01-12 22:47:46 UTC
+      commit_message: 'docs: Update README with pr create-all and pr merge-all command
+        documentation'
+      commit_url: https://github.com/ucli-tools/gits/commit/d9f8a31cdc904cb2a78a51791a6632783de0a208
+      updated_at: 2026-01-12 22:48:03 UTC
   - name: mdtexpdf
     repo: github.com/ucli-tools/mdtexpdf
     description: Convert Markdown documents to PDF with LaTeX quality
