@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-23 17:21:15 UTC
+  last_updated: 2026-01-23 17:25:30 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 519a85f58d1514979cf52225dd146b0e5850b0d9
+    version: ef4fe930a3bbe0a5620a3887473aadf5180639fa
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-23 17:20:42 UTC
-      commit_message: 'feat: add professional book features including front matter
-        pages, drop caps, and copyright page'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/519a85f58d1514979cf52225dd146b0e5850b0d9
-      updated_at: 2026-01-23 17:21:10 UTC
+      commit_date: 2026-01-23 17:24:58 UTC
+      commit_message: 'feat: add Unicode subscript and superscript support for chemical
+        formulas'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/ef4fe930a3bbe0a5620a3887473aadf5180639fa
+      updated_at: 2026-01-23 17:25:25 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
