@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-24 14:11:15 UTC
+  last_updated: 2026-01-24 14:44:43 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: d51f99c5005823fd78962b992e9483618c46d6a5
+    version: d85153932a9e9ef82796e5df8d587f07906bcaf0
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-24 14:10:41 UTC
-      commit_message: 'docs: add comprehensive ROADMAP with prioritized improvements'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d51f99c5005823fd78962b992e9483618c46d6a5
-      updated_at: 2026-01-24 14:11:10 UTC
+      commit_date: 2026-01-24 14:44:10 UTC
+      commit_message: 'docs: expand Docker section in ROADMAP, elevate to P1 priority'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d85153932a9e9ef82796e5df8d587f07906bcaf0
+      updated_at: 2026-01-24 14:44:38 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
