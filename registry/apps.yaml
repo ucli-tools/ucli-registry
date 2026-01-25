@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-25 19:58:43 UTC
+  last_updated: 2026-01-25 20:34:14 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 10b0a5b8122f5b9ea5b10302e6ec2ec4662ce54a
+    version: 303e27b4acc72d82e182b36de9338aead31a6659
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-25 19:58:14 UTC
-      commit_message: 'feat: extract PDF and template modules to complete modularization'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/10b0a5b8122f5b9ea5b10302e6ec2ec4662ce54a
-      updated_at: 2026-01-25 19:58:40 UTC
+      commit_date: 2026-01-25 20:33:41 UTC
+      commit_message: 'refactor: move PDF engine selection and preprocessing functions
+        to modular structure'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/303e27b4acc72d82e182b36de9338aead31a6659
+      updated_at: 2026-01-25 20:34:10 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
