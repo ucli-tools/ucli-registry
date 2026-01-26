@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-26 09:49:48 UTC
+  last_updated: 2026-01-26 18:34:14 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: b3385ad0d5d960d6f9b6c87af575ccd717b8f11d
+    version: f262548e53110948c0fd4fea83ad3dfb714b776b
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-26 09:49:18 UTC
-      commit_message: 'feat: refactor lib/convert.sh into modular helper functions
-        and update documentation'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/b3385ad0d5d960d6f9b6c87af575ccd717b8f11d
-      updated_at: 2026-01-26 09:49:43 UTC
+      commit_date: 2026-01-26 18:33:42 UTC
+      commit_message: 'docs: update modularization documentation with final D2 results'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/f262548e53110948c0fd4fea83ad3dfb714b776b
+      updated_at: 2026-01-26 18:34:09 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
