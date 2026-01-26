@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-26 18:53:30 UTC
+  last_updated: 2026-01-26 19:01:57 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 01bd122139a1ee0ad4a05ab64f346abfd073a63e
+    version: e773026bf8ddc258d68c22539a6b770e39254c78
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-26 18:52:57 UTC
-      commit_message: 'refactor: modularize Lua filter setup, pandoc variable building,
-        and EPUB generation'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/01bd122139a1ee0ad4a05ab64f346abfd073a63e
-      updated_at: 2026-01-26 18:53:23 UTC
+      commit_date: 2026-01-26 19:01:26 UTC
+      commit_message: 'feat: add support for installed version module loading and
+        copy libs on install'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/e773026bf8ddc258d68c22539a6b770e39254c78
+      updated_at: 2026-01-26 19:01:53 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
