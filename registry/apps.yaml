@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-27 02:36:52 UTC
+  last_updated: 2026-01-27 03:06:40 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 20eba897fd08f45ed0f097062eee026c92cd63b2
+    version: 7bc38885ff2681ba8d818e15f22b97ec637c4b81
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-27 02:36:22 UTC
-      commit_message: 'docs: document back cover text background options in tutorial
-        and metadata'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/20eba897fd08f45ed0f097062eee026c92cd63b2
-      updated_at: 2026-01-27 02:36:47 UTC
+      commit_date: 2026-01-27 03:06:15 UTC
+      commit_message: 'docs: document Lulu.com print format metadata fields in METADATA.md'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/7bc38885ff2681ba8d818e15f22b97ec637c4b81
+      updated_at: 2026-01-27 03:06:37 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
