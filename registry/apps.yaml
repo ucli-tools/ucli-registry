@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-26 19:27:23 UTC
+  last_updated: 2026-01-27 00:24:08 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 626fa22f787058950ab721031b6cf176b65dd417
+    version: 8f513889a02c1cfe2cf8faf996519be407fa2b70
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-26 19:26:53 UTC
-      commit_message: 'feat: set has_parts flag in book_structure filter for LaTeX
-        TOC formatting'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/626fa22f787058950ab721031b6cf176b65dd417
-      updated_at: 2026-01-26 19:27:19 UTC
+      commit_date: 2026-01-27 00:23:37 UTC
+      commit_message: 'feat: add Lulu.com print-ready output with interior PDF and
+        cover spread generation'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/8f513889a02c1cfe2cf8faf996519be407fa2b70
+      updated_at: 2026-01-27 00:24:03 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
