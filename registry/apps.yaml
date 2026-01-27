@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-27 03:06:40 UTC
+  last_updated: 2026-01-27 04:02:00 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 7bc38885ff2681ba8d818e15f22b97ec637c4b81
+    version: 686dd7db80047ffcbbe80e8db1490d5a60c340e5
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-27 03:06:15 UTC
-      commit_message: 'docs: document Lulu.com print format metadata fields in METADATA.md'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/7bc38885ff2681ba8d818e15f22b97ec637c4b81
-      updated_at: 2026-01-27 03:06:37 UTC
+      commit_date: 2026-01-27 04:01:31 UTC
+      commit_message: 'feat: add spine text control for Lulu.com cover spreads with
+        auto, true, false options'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/686dd7db80047ffcbbe80e8db1490d5a60c340e5
+      updated_at: 2026-01-27 04:01:56 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
