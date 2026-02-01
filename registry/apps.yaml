@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-01-27 16:24:15 UTC
+  last_updated: 2026-02-01 14:44:09 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 0877c204d435916562d2549ca161aa4b7e7f4d89
+    version: 91071a6da094d704507dba5ac71f24e37d8cbb52
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-27 16:23:43 UTC
-      commit_message: 'fix: only use metadata trim size when Lulu.com output is enabled'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/0877c204d435916562d2549ca161aa4b7e7f4d89
-      updated_at: 2026-01-27 16:24:10 UTC
+      commit_date: 2026-02-01 14:43:38 UTC
+      commit_message: 'docs: add Greek etymologies guide and extended Unicode support
+        in LaTeX'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/91071a6da094d704507dba5ac71f24e37d8cbb52
+      updated_at: 2026-02-01 14:44:01 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
