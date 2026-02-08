@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-01 16:57:59 UTC
+  last_updated: 2026-02-08 14:01:56 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 5e16edb8ec88a80d6fe16da92b58173ced093760
+    version: 3f31bda6c7cc999721e2fd893e4b153dead7f94f
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-01 16:57:30 UTC
-      commit_message: 'docs: add note about Unicode degree symbol rendering issue
-        in math mode'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/5e16edb8ec88a80d6fe16da92b58173ced093760
-      updated_at: 2026-02-01 16:57:54 UTC
+      commit_date: 2026-02-08 14:01:20 UTC
+      commit_message: 'feat: add TikZ libraries, PGFPlots, and support for custom
+        LaTeX header includes'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/3f31bda6c7cc999721e2fd893e4b153dead7f94f
+      updated_at: 2026-02-08 14:01:49 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
