@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-14 16:36:34 UTC
+  last_updated: 2026-02-15 20:18:36 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 649b36e08d7d982fe6ba8489d0033232c0cfebe0
+    version: d155e5999ef68a2496363061d59efb1343ef1171
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-14 16:36:09 UTC
-      commit_message: 'feat: add raggedbottom and TikZ patterns library to LaTeX template'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/649b36e08d7d982fe6ba8489d0033232c0cfebe0
-      updated_at: 2026-02-14 16:36:31 UTC
+      commit_date: 2026-02-15 20:18:03 UTC
+      commit_message: 'feat: add equation numbering support with Lua filter and LaTeX
+        configuration'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d155e5999ef68a2496363061d59efb1343ef1171
+      updated_at: 2026-02-15 20:18:31 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
