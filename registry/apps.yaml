@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-18 17:20:14 UTC
+  last_updated: 2026-02-18 19:43:03 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: ae2500b001fb21467e8a92c99e6961724ba7f9ab
+    version: 0a67413312fd99ac32af0ecace761c3504986967
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-18 17:19:38 UTC
-      commit_message: 'feat: add subject index, LoF/LoT back matter, and acknowledgments/about-author
-        template support'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/ae2500b001fb21467e8a92c99e6961724ba7f9ab
-      updated_at: 2026-02-18 17:20:10 UTC
+      commit_date: 2026-02-18 19:42:24 UTC
+      commit_message: 'chore: cleanup debug prints, fix duplicates, update docs'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/0a67413312fd99ac32af0ecace761c3504986967
+      updated_at: 2026-02-18 19:42:56 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
