@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-16 13:19:33 UTC
+  last_updated: 2026-02-18 17:20:14 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 6e58531a87bf6c108aaa43d8a9f57f6a6cd2b3e6
+    version: ae2500b001fb21467e8a92c99e6961724ba7f9ab
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-16 13:18:58 UTC
-      commit_message: 'feat: add Lua filter to fix level 4 and 5 headings as standalone
-        blocks in LaTeX'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/6e58531a87bf6c108aaa43d8a9f57f6a6cd2b3e6
-      updated_at: 2026-02-16 13:19:27 UTC
+      commit_date: 2026-02-18 17:19:38 UTC
+      commit_message: 'feat: add subject index, LoF/LoT back matter, and acknowledgments/about-author
+        template support'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/ae2500b001fb21467e8a92c99e6961724ba7f9ab
+      updated_at: 2026-02-18 17:20:10 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
