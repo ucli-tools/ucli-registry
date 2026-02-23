@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-19 02:33:49 UTC
+  last_updated: 2026-02-23 14:26:37 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: a8cebdab5cdcada37327e1facb27750fc1988cae
+    version: 3a6d2c822be79ca2b07f7e9eed795f07728e2932
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-19 02:33:23 UTC
-      commit_message: 'fix: prefer local filters over system-installed ones'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/a8cebdab5cdcada37327e1facb27750fc1988cae
-      updated_at: 2026-02-19 02:33:46 UTC
+      commit_date: 2026-02-20 02:17:05 UTC
+      commit_message: 'feat: install index and equation number filters in mdtexpdf.sh'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/3a6d2c822be79ca2b07f7e9eed795f07728e2932
+      updated_at: 2026-02-23 14:26:32 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -325,7 +325,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 7d8e5a95d9722e3ef971a1cac1c38bcd265c2bcd
+    version: e4889e04cc938a56468d8611a2378d0a8f65ba40
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +335,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:22 UTC
-      commit_message: 'docs: fix missing newline at end of README.md'
-      commit_url: https://github.com/ucli-tools/ms2md/commit/7d8e5a95d9722e3ef971a1cac1c38bcd265c2bcd
-      updated_at: 2025-12-23 04:21:44 UTC
+      commit_date: 2026-02-23 14:26:04 UTC
+      commit_message: 'chore: add test_files directory to gitignore'
+      commit_url: https://github.com/ucli-tools/ms2md/commit/e4889e04cc938a56468d8611a2378d0a8f65ba40
+      updated_at: 2026-02-23 14:26:34 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
