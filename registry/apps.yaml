@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-24 03:47:17 UTC
+  last_updated: 2026-02-24 12:19:05 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -325,7 +325,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 9efac63b6657a95e05a0f36549b7ba29cfeeb8f5
+    version: 8d1d8dd8a7ddea7ecf6b0110391100b728a24643
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +335,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-24 03:46:50 UTC
-      commit_message: Strip equation numbers and wrap wide equations
-      commit_url: https://github.com/ucli-tools/ms2md/commit/9efac63b6657a95e05a0f36549b7ba29cfeeb8f5
-      updated_at: 2026-02-24 03:47:16 UTC
+      commit_date: 2026-02-24 12:18:32 UTC
+      commit_message: Fix equation tags, QED markers, wide eq sizing, media→img
+      commit_url: https://github.com/ucli-tools/ms2md/commit/8d1d8dd8a7ddea7ecf6b0110391100b728a24643
+      updated_at: 2026-02-24 12:19:03 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
