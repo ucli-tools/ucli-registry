@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-24 12:19:05 UTC
+  last_updated: 2026-02-24 22:43:56 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: cbeb4f76ab9f0a8bcc86841719ad0238eebf1226
+    version: 36ed1b2b4b222c98fe30bada35832f1177c27181
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-24 02:48:03 UTC
-      commit_message: 'feat: add image and table size filters for LaTeX output formatting'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/cbeb4f76ab9f0a8bcc86841719ad0238eebf1226
-      updated_at: 2026-02-24 03:22:49 UTC
+      commit_date: 2026-02-24 22:43:35 UTC
+      commit_message: Fix book heading levels and add no_title_page option
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/36ed1b2b4b222c98fe30bada35832f1177c27181
+      updated_at: 2026-02-24 22:43:49 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -325,7 +325,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 8d1d8dd8a7ddea7ecf6b0110391100b728a24643
+    version: e807d3024b78a92116ee02b3810b009052a11122
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +335,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-24 12:18:32 UTC
-      commit_message: Fix equation tags, QED markers, wide eq sizing, media→img
-      commit_url: https://github.com/ucli-tools/ms2md/commit/8d1d8dd8a7ddea7ecf6b0110391100b728a24643
-      updated_at: 2026-02-24 12:19:03 UTC
+      commit_date: 2026-02-24 22:43:18 UTC
+      commit_message: Add front matter structure detection and fix broken inline math
+      commit_url: https://github.com/ucli-tools/ms2md/commit/e807d3024b78a92116ee02b3810b009052a11122
+      updated_at: 2026-02-24 22:43:53 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
