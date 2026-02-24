@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-24 03:22:53 UTC
+  last_updated: 2026-02-24 03:47:17 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -325,7 +325,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 3c8d67d3462e90cc0c9f964b0a11a71c44a99d63
+    version: 9efac63b6657a95e05a0f36549b7ba29cfeeb8f5
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +335,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-24 03:22:21 UTC
-      commit_message: Add placeholder-based math extraction pipeline
-      commit_url: https://github.com/ucli-tools/ms2md/commit/3c8d67d3462e90cc0c9f964b0a11a71c44a99d63
-      updated_at: 2026-02-24 03:22:51 UTC
+      commit_date: 2026-02-24 03:46:50 UTC
+      commit_message: Strip equation numbers and wrap wide equations
+      commit_url: https://github.com/ucli-tools/ms2md/commit/9efac63b6657a95e05a0f36549b7ba29cfeeb8f5
+      updated_at: 2026-02-24 03:47:16 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
