@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-23 14:26:37 UTC
+  last_updated: 2026-02-24 01:30:30 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 3a6d2c822be79ca2b07f7e9eed795f07728e2932
+    version: b9fadaa43ced5b4a176681ed1f9d136128e40581
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-20 02:17:05 UTC
-      commit_message: 'feat: install index and equation number filters in mdtexpdf.sh'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/3a6d2c822be79ca2b07f7e9eed795f07728e2932
-      updated_at: 2026-02-23 14:26:32 UTC
+      commit_date: 2026-02-23 14:26:51 UTC
+      commit_message: 'feat: add cover_author_offset metadata variable for cover page
+        layout'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/b9fadaa43ced5b4a176681ed1f9d136128e40581
+      updated_at: 2026-02-24 01:30:24 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -325,7 +326,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: e4889e04cc938a56468d8611a2378d0a8f65ba40
+    version: f90b44c34fafe7d5651801767f27b09e2c4d57c5
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +336,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-23 14:26:04 UTC
-      commit_message: 'chore: add test_files directory to gitignore'
-      commit_url: https://github.com/ucli-tools/ms2md/commit/e4889e04cc938a56468d8611a2378d0a8f65ba40
-      updated_at: 2026-02-23 14:26:34 UTC
+      commit_date: 2026-02-24 01:29:53 UTC
+      commit_message: Rename ms2md to docx2md and add LaTeX sanitization pipeline
+      commit_url: https://github.com/ucli-tools/ms2md/commit/f90b44c34fafe7d5651801767f27b09e2c4d57c5
+      updated_at: 2026-02-24 01:30:28 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
