@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-24 01:34:59 UTC
+  last_updated: 2026-02-24 03:22:53 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: b9fadaa43ced5b4a176681ed1f9d136128e40581
+    version: cbeb4f76ab9f0a8bcc86841719ad0238eebf1226
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-23 14:26:51 UTC
-      commit_message: 'feat: add cover_author_offset metadata variable for cover page
-        layout'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/b9fadaa43ced5b4a176681ed1f9d136128e40581
-      updated_at: 2026-02-24 01:30:24 UTC
+      commit_date: 2026-02-24 02:48:03 UTC
+      commit_message: 'feat: add image and table size filters for LaTeX output formatting'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/cbeb4f76ab9f0a8bcc86841719ad0238eebf1226
+      updated_at: 2026-02-24 03:22:49 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -326,7 +325,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 59c703200bba1953fd26e44b12467031f49e0698
+    version: 3c8d67d3462e90cc0c9f964b0a11a71c44a99d63
     versioning:
       primary: git_commit
       fallback: semantic
@@ -336,11 +335,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-24 01:34:31 UTC
-      commit_message: Rename all MS2MD references to docx2md across docs, configs,
-        and source
-      commit_url: https://github.com/ucli-tools/ms2md/commit/59c703200bba1953fd26e44b12467031f49e0698
-      updated_at: 2026-02-24 01:34:59 UTC
+      commit_date: 2026-02-24 03:22:21 UTC
+      commit_message: Add placeholder-based math extraction pipeline
+      commit_url: https://github.com/ucli-tools/ms2md/commit/3c8d67d3462e90cc0c9f964b0a11a71c44a99d63
+      updated_at: 2026-02-24 03:22:51 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
