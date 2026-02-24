@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-24 01:30:30 UTC
+  last_updated: 2026-02-24 01:34:59 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -326,7 +326,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: f90b44c34fafe7d5651801767f27b09e2c4d57c5
+    version: 59c703200bba1953fd26e44b12467031f49e0698
     versioning:
       primary: git_commit
       fallback: semantic
@@ -336,10 +336,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-24 01:29:53 UTC
-      commit_message: Rename ms2md to docx2md and add LaTeX sanitization pipeline
-      commit_url: https://github.com/ucli-tools/ms2md/commit/f90b44c34fafe7d5651801767f27b09e2c4d57c5
-      updated_at: 2026-02-24 01:30:28 UTC
+      commit_date: 2026-02-24 01:34:31 UTC
+      commit_message: Rename all MS2MD references to docx2md across docs, configs,
+        and source
+      commit_url: https://github.com/ucli-tools/ms2md/commit/59c703200bba1953fd26e44b12467031f49e0698
+      updated_at: 2026-02-24 01:34:59 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
