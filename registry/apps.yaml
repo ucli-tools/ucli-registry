@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-24 22:43:56 UTC
+  last_updated: 2026-02-24 23:57:10 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 36ed1b2b4b222c98fe30bada35832f1177c27181
+    version: 669f1065e7b658b072cf9d75b011a47b4dfc3863
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-24 22:43:35 UTC
-      commit_message: Fix book heading levels and add no_title_page option
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/36ed1b2b4b222c98fe30bada35832f1177c27181
-      updated_at: 2026-02-24 22:43:49 UTC
+      commit_date: 2026-02-24 23:56:33 UTC
+      commit_message: Add no_figure_numbers metadata to suppress LaTeX auto figure
+        numbering
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/669f1065e7b658b072cf9d75b011a47b4dfc3863
+      updated_at: 2026-02-24 23:57:04 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -325,7 +326,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: e807d3024b78a92116ee02b3810b009052a11122
+    version: 333aeae41fdd3f9d0f44b189136666f4b60906fd
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +336,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-24 22:43:18 UTC
-      commit_message: Add front matter structure detection and fix broken inline math
-      commit_url: https://github.com/ucli-tools/ms2md/commit/e807d3024b78a92116ee02b3810b009052a11122
-      updated_at: 2026-02-24 22:43:53 UTC
+      commit_date: 2026-02-24 23:56:30 UTC
+      commit_message: Strip Word AI-generated image descriptions and add no_figure_numbers
+        support
+      commit_url: https://github.com/ucli-tools/ms2md/commit/333aeae41fdd3f9d0f44b189136666f4b60906fd
+      updated_at: 2026-02-24 23:57:07 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
