@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-25 01:01:30 UTC
+  last_updated: 2026-02-25 01:02:49 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -325,7 +325,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: e4d8937e91f7b2abca1d9a33b8098372ac9d7e40
+    version: 8ba936ebd58b2d29cd739a31c2f9e3e0ef7c9603
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +335,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-25 01:00:47 UTC
-      commit_message: Generate metadata.yaml on first run for persistent metadata
-      commit_url: https://github.com/ucli-tools/ms2md/commit/e4d8937e91f7b2abca1d9a33b8098372ac9d7e40
-      updated_at: 2026-02-25 01:01:27 UTC
+      commit_date: 2026-02-25 01:02:21 UTC
+      commit_message: Bump pillow minimum to 12.1.1 to fix CVE (PSD out-of-bounds
+        write)
+      commit_url: https://github.com/ucli-tools/ms2md/commit/8ba936ebd58b2d29cd739a31c2f9e3e0ef7c9603
+      updated_at: 2026-02-25 01:02:48 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
