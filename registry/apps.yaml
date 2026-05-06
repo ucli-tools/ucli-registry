@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-25 01:02:49 UTC
+  last_updated: 2026-05-06 05:31:19 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 36f76d5841765197383e77033052ef81ad28cc34
+    version: 8993056fb0bf9902e188a45ecdaf007c63480d98
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-25 01:00:53 UTC
-      commit_message: Auto-detect metadata.yaml and add --metadata-file flag
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/36f76d5841765197383e77033052ef81ad28cc34
-      updated_at: 2026-02-25 01:01:24 UTC
+      commit_date: 2026-03-04 20:38:45 UTC
+      commit_message: 'feat: support Roman numerals in Part headings (Part I, Part
+        II, etc.)'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/8993056fb0bf9902e188a45ecdaf007c63480d98
+      updated_at: 2026-05-06 05:31:13 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
