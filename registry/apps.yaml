@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-02-25 01:02:49 UTC
+  last_updated: 2026-09-25 22:28:12 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 36f76d5841765197383e77033052ef81ad28cc34
+    version: aae0710f75dd8b3a18d01b324aa132e8d32862f1
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-25 01:00:53 UTC
-      commit_message: Auto-detect metadata.yaml and add --metadata-file flag
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/36f76d5841765197383e77033052ef81ad28cc34
-      updated_at: 2026-02-25 01:01:24 UTC
+      commit_date: 2026-09-25 18:45:12 UTC
+      commit_message: 'feat: fit_wide_equations lets a long inline formula break at
+        a comma'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/aae0710f75dd8b3a18d01b324aa132e8d32862f1
+      updated_at: 2026-09-25 22:28:08 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -325,7 +326,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 8ba936ebd58b2d29cd739a31c2f9e3e0ef7c9603
+    version: 1c32bef9d9af668b0b274ec70008ea9a644460db
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,11 +336,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-02-25 01:02:21 UTC
-      commit_message: Bump pillow minimum to 12.1.1 to fix CVE (PSD out-of-bounds
-        write)
-      commit_url: https://github.com/ucli-tools/ms2md/commit/8ba936ebd58b2d29cd739a31c2f9e3e0ef7c9603
-      updated_at: 2026-02-25 01:02:48 UTC
+      commit_date: 2026-09-25 18:45:01 UTC
+      commit_message: 'fix: bare web addresses become autolinks'
+      commit_url: https://github.com/ucli-tools/ms2md/commit/1c32bef9d9af668b0b274ec70008ea9a644460db
+      updated_at: 2026-09-25 22:28:10 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
