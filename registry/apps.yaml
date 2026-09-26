@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-26 01:52:47 UTC
+  last_updated: 2026-09-26 16:48:55 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 9fac0ddb55f73ae59493ffd6c4b9ee6e3ffd346f
+    version: d65eea271047c0cb6ca48db8c883eef590abf031
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 01:52:11 UTC
-      commit_message: 'feat: math_font chooses the math typeface'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/9fac0ddb55f73ae59493ffd6c4b9ee6e3ffd346f
-      updated_at: 2026-09-26 01:52:44 UTC
+      commit_date: 2026-09-26 14:47:54 UTC
+      commit_message: 'fix(epub): cover scaled to e-book size and saved as JPEG'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d65eea271047c0cb6ca48db8c883eef590abf031
+      updated_at: 2026-09-26 16:48:48 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -98,7 +98,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: 8234c332d1256c0393885896dc7b02563df1aadf
+    version: c10556396415e8a7dc1ed0c8c5ee98a223c7443e
     versioning:
       primary: git_commit
       fallback: semantic
@@ -108,10 +108,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:37 UTC
-      commit_message: 'docs: add trailing newline to README.md'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/8234c332d1256c0393885896dc7b02563df1aadf
-      updated_at: 2025-12-23 04:21:42 UTC
+      commit_date: 2026-09-26 16:48:14 UTC
+      commit_message: 'feat!: rebuild mdaudiobook as a checked pipeline: script, check,
+        voice, master, verify'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/c10556396415e8a7dc1ed0c8c5ee98a223c7443e
+      updated_at: 2026-09-26 16:48:48 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
