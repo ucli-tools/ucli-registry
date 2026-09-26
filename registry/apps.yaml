@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-26 16:48:55 UTC
+  last_updated: 2026-09-26 20:53:53 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: d65eea271047c0cb6ca48db8c883eef590abf031
+    version: 8cae222dcc5be2fc720946b681f4f8f8f00401db
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 14:47:54 UTC
-      commit_message: 'fix(epub): cover scaled to e-book size and saved as JPEG'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d65eea271047c0cb6ca48db8c883eef590abf031
-      updated_at: 2026-09-26 16:48:48 UTC
+      commit_date: 2026-09-26 17:00:03 UTC
+      commit_message: 'fix(epub): place the author on the cover by cover_author_offset'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/8cae222dcc5be2fc720946b681f4f8f8f00401db
+      updated_at: 2026-09-26 20:53:47 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -98,7 +98,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: c10556396415e8a7dc1ed0c8c5ee98a223c7443e
+    version: 97bab544c59ed695a0b3d8c07e42ea375aaf8ccf
     versioning:
       primary: git_commit
       fallback: semantic
@@ -108,11 +108,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 16:48:14 UTC
-      commit_message: 'feat!: rebuild mdaudiobook as a checked pipeline: script, check,
-        voice, master, verify'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/c10556396415e8a7dc1ed0c8c5ee98a223c7443e
-      updated_at: 2026-09-26 16:48:48 UTC
+      commit_date: 2026-09-26 20:53:22 UTC
+      commit_message: 'fix(cli): write progress lines as they happen when output goes
+        to a file'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/97bab544c59ed695a0b3d8c07e42ea375aaf8ccf
+      updated_at: 2026-09-26 20:53:47 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
