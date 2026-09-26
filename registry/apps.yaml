@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-26 01:04:21 UTC
+  last_updated: 2026-09-26 01:52:47 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: d3284a21ddc6218489f332f5eba12b105faac1ff
+    version: 9fac0ddb55f73ae59493ffd6c4b9ee6e3ffd346f
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 00:49:39 UTC
-      commit_message: 'feat: a book''s own front matter pages come before its contents'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d3284a21ddc6218489f332f5eba12b105faac1ff
-      updated_at: 2026-09-26 01:00:27 UTC
+      commit_date: 2026-09-26 01:52:11 UTC
+      commit_message: 'feat: math_font chooses the math typeface'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/9fac0ddb55f73ae59493ffd6c4b9ee6e3ffd346f
+      updated_at: 2026-09-26 01:52:44 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -325,7 +325,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 63cf94ef51e790b55ca33d148c1e0438a86d8940
+    version: c6b0272cef495bb6807ec25188cc7b3347fc584a
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +335,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 00:09:35 UTC
-      commit_message: 'feat: docx2md verify compares a conversion with its Word document'
-      commit_url: https://github.com/ucli-tools/ms2md/commit/63cf94ef51e790b55ca33d148c1e0438a86d8940
-      updated_at: 2026-09-26 01:04:19 UTC
+      commit_date: 2026-09-26 01:52:20 UTC
+      commit_message: 'feat: converted documents set math in New Computer Modern Book'
+      commit_url: https://github.com/ucli-tools/ms2md/commit/c6b0272cef495bb6807ec25188cc7b3347fc584a
+      updated_at: 2026-09-26 01:52:46 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
