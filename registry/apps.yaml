@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-26 01:00:31 UTC
+  last_updated: 2026-09-26 01:04:21 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -325,7 +325,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: e25df9e2c9aef8d06cc19994419891312f72f172
+    version: 63cf94ef51e790b55ca33d148c1e0438a86d8940
     versioning:
       primary: git_commit
       fallback: semantic
@@ -335,10 +335,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 01:00:02 UTC
-      commit_message: 'chore: neutral example names in comments and tests'
-      commit_url: https://github.com/ucli-tools/ms2md/commit/e25df9e2c9aef8d06cc19994419891312f72f172
-      updated_at: 2026-09-26 01:00:29 UTC
+      commit_date: 2026-09-26 00:09:35 UTC
+      commit_message: 'feat: docx2md verify compares a conversion with its Word document'
+      commit_url: https://github.com/ucli-tools/ms2md/commit/63cf94ef51e790b55ca33d148c1e0438a86d8940
+      updated_at: 2026-09-26 01:04:19 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
