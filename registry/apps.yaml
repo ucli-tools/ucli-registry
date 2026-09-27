@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-26 23:02:41 UTC
+  last_updated: 2026-09-27 15:35:47 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -98,7 +98,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: ed1e5da79c47080af2b6f7189ae51701b919030f
+    version: 472410f9304a7e262b081ae770b56f77396ce9b8
     versioning:
       primary: git_commit
       fallback: semantic
@@ -108,11 +108,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 23:02:10 UTC
-      commit_message: 'feat(verify): check each chapter in sentence windows under
-        30 seconds'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/ed1e5da79c47080af2b6f7189ae51701b919030f
-      updated_at: 2026-09-26 23:02:38 UTC
+      commit_date: 2026-09-27 15:35:18 UTC
+      commit_message: 'feat: figure and table numbers, audio descriptions, letters
+        spoken by name'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/472410f9304a7e262b081ae770b56f77396ce9b8
+      updated_at: 2026-09-27 15:35:43 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
