@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-27 16:25:18 UTC
+  last_updated: 2026-09-27 17:38:07 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -98,7 +98,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: c599938433ec6c1780bbd303074b2999683b0b05
+    version: 845e08ba30e6dd164758690de7ffdf2643a9a7a3
     versioning:
       primary: git_commit
       fallback: semantic
@@ -108,11 +108,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-27 16:24:46 UTC
-      commit_message: 'fix(kokoro): stress marks before the stressed vowel, not the
-        syllable'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/c599938433ec6c1780bbd303074b2999683b0b05
-      updated_at: 2026-09-27 16:25:13 UTC
+      commit_date: 2026-09-27 17:37:37 UTC
+      commit_message: 'feat(script): descriptions are Markdown, so a letter written
+        as maths is spoken by name'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/845e08ba30e6dd164758690de7ffdf2643a9a7a3
+      updated_at: 2026-09-27 17:38:04 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
