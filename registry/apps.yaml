@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-27 18:06:42 UTC
+  last_updated: 2026-09-27 20:33:33 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 8cae222dcc5be2fc720946b681f4f8f8f00401db
+    version: d9877c5891f79a2026df87d636f0f2361a8cf878
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,10 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 17:00:03 UTC
-      commit_message: 'fix(epub): place the author on the cover by cover_author_offset'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/8cae222dcc5be2fc720946b681f4f8f8f00401db
-      updated_at: 2026-09-26 20:53:47 UTC
+      commit_date: 2026-09-27 20:32:39 UTC
+      commit_message: 'feat(epub): figure descriptions become alt text; accessibility
+        declared'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d9877c5891f79a2026df87d636f0f2361a8cf878
+      updated_at: 2026-09-27 20:33:27 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -98,7 +99,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: 1bb4ee600c292e9c08522cec6b81ec425370bdb5
+    version: bbd1bf28dfa789e14740ea50579b16971e44ecc3
     versioning:
       primary: git_commit
       fallback: semantic
@@ -108,11 +109,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-27 18:06:09 UTC
-      commit_message: 'fix: \csname penalties are layout; check flags @-names (LaTeX
-        internals) reaching the voice'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/1bb4ee600c292e9c08522cec6b81ec425370bdb5
-      updated_at: 2026-09-27 18:06:37 UTC
+      commit_date: 2026-09-27 20:33:00 UTC
+      commit_message: 'docs: the description comment is also the EPUB alt text (mdtexpdf)'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/bbd1bf28dfa789e14740ea50579b16971e44ecc3
+      updated_at: 2026-09-27 20:33:27 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
