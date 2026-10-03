@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-27 20:33:33 UTC
+  last_updated: 2026-10-03 07:45:11 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: d9877c5891f79a2026df87d636f0f2361a8cf878
+    version: 310427ba51aad40d4546eab5fbdd8c40416030cf
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-27 20:32:39 UTC
-      commit_message: 'feat(epub): figure descriptions become alt text; accessibility
-        declared'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d9877c5891f79a2026df87d636f0f2361a8cf878
-      updated_at: 2026-09-27 20:33:27 UTC
+      commit_date: 2026-09-28 06:34:38 UTC
+      commit_message: 'fix: front matter ends at its second ---, not at a later horizontal
+        rule'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/310427ba51aad40d4546eab5fbdd8c40416030cf
+      updated_at: 2026-10-03 07:45:06 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
