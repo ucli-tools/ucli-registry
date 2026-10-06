@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-09-27 20:33:33 UTC
+  last_updated: 2026-10-06 03:31:38 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: d9877c5891f79a2026df87d636f0f2361a8cf878
+    version: 310427ba51aad40d4546eab5fbdd8c40416030cf
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-27 20:32:39 UTC
-      commit_message: 'feat(epub): figure descriptions become alt text; accessibility
-        declared'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/d9877c5891f79a2026df87d636f0f2361a8cf878
-      updated_at: 2026-09-27 20:33:27 UTC
+      commit_date: 2026-09-28 06:34:38 UTC
+      commit_message: 'fix: front matter ends at its second ---, not at a later horizontal
+        rule'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/310427ba51aad40d4546eab5fbdd8c40416030cf
+      updated_at: 2026-10-06 03:31:31 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -99,7 +99,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: bbd1bf28dfa789e14740ea50579b16971e44ecc3
+    version: 9d8bfbd2235f8ddfa3315ad0b5cab754e7131a6d
     versioning:
       primary: git_commit
       fallback: semantic
@@ -109,10 +109,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-27 20:33:00 UTC
-      commit_message: 'docs: the description comment is also the EPUB alt text (mdtexpdf)'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/bbd1bf28dfa789e14740ea50579b16971e44ecc3
-      updated_at: 2026-09-27 20:33:27 UTC
+      commit_date: 2026-10-06 03:30:59 UTC
+      commit_message: 'fix: preserve captions beside split page wrappers'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/9d8bfbd2235f8ddfa3315ad0b5cab754e7131a6d
+      updated_at: 2026-10-06 03:31:31 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
