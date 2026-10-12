@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-12 06:23:25 UTC
+  last_updated: 2026-10-12 06:31:30 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 03f261470229c3eddcc9bd1292dfbe4eb9114c98
+    version: 45106c28d252cf825762bf3dffcde6ff75935945
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-12 05:52:57 UTC
-      commit_message: 'fix: table rows of tall formulas no longer touch each other
-        (#20)'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/03f261470229c3eddcc9bd1292dfbe4eb9114c98
-      updated_at: 2026-10-12 06:23:22 UTC
+      commit_date: 2026-10-12 06:28:03 UTC
+      commit_message: 'feat: colour in tables, kept from Word: cell backgrounds and
+        coloured values, in the PDF and the EPUB (#21)'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/45106c28d252cf825762bf3dffcde6ff75935945
+      updated_at: 2026-10-12 06:31:26 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -327,7 +327,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 28470dc2f4b3fde1834b127c19bac871dcc01f82
+    version: a93dfa468a7a37d4853a881cc7cd3de02d775437
     versioning:
       primary: git_commit
       fallback: semantic
@@ -337,11 +337,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-12 05:44:55 UTC
-      commit_message: 'feat: docx2md edit and docx2md diff, to correct a Word document
-        and prove the correction'
-      commit_url: https://github.com/ucli-tools/ms2md/commit/28470dc2f4b3fde1834b127c19bac871dcc01f82
-      updated_at: 2026-10-12 05:45:24 UTC
+      commit_date: 2026-10-12 06:31:03 UTC
+      commit_message: 'feat: table colours kept from the Word document, and checked
+        by verify (#1)'
+      commit_url: https://github.com/ucli-tools/ms2md/commit/a93dfa468a7a37d4853a881cc7cd3de02d775437
+      updated_at: 2026-10-12 06:31:28 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
