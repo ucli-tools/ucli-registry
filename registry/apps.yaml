@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-10 23:27:55 UTC
+  last_updated: 2026-10-12 05:45:27 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -327,7 +327,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: c6b0272cef495bb6807ec25188cc7b3347fc584a
+    version: 28470dc2f4b3fde1834b127c19bac871dcc01f82
     versioning:
       primary: git_commit
       fallback: semantic
@@ -337,10 +337,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-26 01:52:20 UTC
-      commit_message: 'feat: converted documents set math in New Computer Modern Book'
-      commit_url: https://github.com/ucli-tools/ms2md/commit/c6b0272cef495bb6807ec25188cc7b3347fc584a
-      updated_at: 2026-09-26 01:52:46 UTC
+      commit_date: 2026-10-12 05:44:55 UTC
+      commit_message: 'feat: docx2md edit and docx2md diff, to correct a Word document
+        and prove the correction'
+      commit_url: https://github.com/ucli-tools/ms2md/commit/28470dc2f4b3fde1834b127c19bac871dcc01f82
+      updated_at: 2026-10-12 05:45:24 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
