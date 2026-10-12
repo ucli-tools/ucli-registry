@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-12 13:04:29 UTC
+  last_updated: 2026-10-12 13:18:08 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -327,7 +327,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: a93dfa468a7a37d4853a881cc7cd3de02d775437
+    version: c2947fafd81535c3abfe9db3fb85b403d2e8c06e
     versioning:
       primary: git_commit
       fallback: semantic
@@ -337,11 +337,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-12 06:31:03 UTC
-      commit_message: 'feat: table colours kept from the Word document, and checked
-        by verify (#1)'
-      commit_url: https://github.com/ucli-tools/ms2md/commit/a93dfa468a7a37d4853a881cc7cd3de02d775437
-      updated_at: 2026-10-12 06:31:28 UTC
+      commit_date: 2026-10-12 13:17:33 UTC
+      commit_message: 'fix: edit --paragraph finds its paragraph after an empty one
+        written as one tag; a space it adds is kept (#2)'
+      commit_url: https://github.com/ucli-tools/ms2md/commit/c2947fafd81535c3abfe9db3fb85b403d2e8c06e
+      updated_at: 2026-10-12 13:18:05 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
