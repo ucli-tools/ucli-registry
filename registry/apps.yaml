@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-12 05:45:27 UTC
+  last_updated: 2026-10-12 06:23:25 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 310427ba51aad40d4546eab5fbdd8c40416030cf
+    version: 03f261470229c3eddcc9bd1292dfbe4eb9114c98
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-09-28 06:34:38 UTC
-      commit_message: 'fix: front matter ends at its second ---, not at a later horizontal
-        rule'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/310427ba51aad40d4546eab5fbdd8c40416030cf
-      updated_at: 2026-10-06 03:31:31 UTC
+      commit_date: 2026-10-12 05:52:57 UTC
+      commit_message: 'fix: table rows of tall formulas no longer touch each other
+        (#20)'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/03f261470229c3eddcc9bd1292dfbe4eb9114c98
+      updated_at: 2026-10-12 06:23:22 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
@@ -99,7 +99,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: f1ee5b08aaf6ac1345c15ba72872cc044bb369c8
+    version: e849092df5a6b66812048b7fe9d1998e9124ed56
     versioning:
       primary: git_commit
       fallback: semantic
@@ -109,11 +109,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-10 23:27:28 UTC
-      commit_message: 'fix: a control space at the end of a line is kept; an empty
-        equation says nothing'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/f1ee5b08aaf6ac1345c15ba72872cc044bb369c8
-      updated_at: 2026-10-10 23:27:50 UTC
+      commit_date: 2026-10-12 06:22:56 UTC
+      commit_message: 'fix: a coloured value is spoken as the value, not « an equation
+        » (#2)'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/e849092df5a6b66812048b7fe9d1998e9124ed56
+      updated_at: 2026-10-12 06:23:22 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
