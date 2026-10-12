@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-12 13:00:19 UTC
+  last_updated: 2026-10-12 13:04:29 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -99,7 +99,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: 4b6bb31882d871aa920bc4cad8075c9e868a051e
+    version: 618d7bd43cb392ca23eccc8b4cbb3000d4102c4f
     versioning:
       primary: git_commit
       fallback: semantic
@@ -109,11 +109,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-12 12:59:43 UTC
-      commit_message: 'fix: a name before its brackets, a function''s arguments and
-        a symbol after its name read as a narrator says them (#3)'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/4b6bb31882d871aa920bc4cad8075c9e868a051e
-      updated_at: 2026-10-12 13:00:12 UTC
+      commit_date: 2026-10-12 13:03:56 UTC
+      commit_message: 'fix: a function''s brackets stay around a sum or a product,
+        which they bound (#3)'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/618d7bd43cb392ca23eccc8b4cbb3000d4102c4f
+      updated_at: 2026-10-12 13:04:25 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: File conversion utilities for various formats
