@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-12 13:18:08 UTC
+  last_updated: 2026-10-17 06:42:40 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -72,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 45106c28d252cf825762bf3dffcde6ff75935945
+    version: 7fbef5a575f84e18c91e81d902aced2c144ea11e
     versioning:
       primary: git_commit
       fallback: semantic
@@ -82,11 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-12 06:28:03 UTC
-      commit_message: 'feat: colour in tables, kept from Word: cell backgrounds and
-        coloured values, in the PDF and the EPUB (#21)'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/45106c28d252cf825762bf3dffcde6ff75935945
-      updated_at: 2026-10-12 06:31:26 UTC
+      commit_date: 2026-10-12 13:29:45 UTC
+      commit_message: 'fix: the EPUB check reads no colour as text (#22)'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/7fbef5a575f84e18c91e81d902aced2c144ea11e
+      updated_at: 2026-10-17 06:42:34 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
