@@ -155,12 +155,12 @@ class Tests(Base):
 
 
     def test_repin_regenerates_index_in_agreement(self):
-        self.upd()
+        self.upd("aaa")
         idx = (ROOT / "tests" / "index.tsv").read_text().splitlines()
         self.assertEqual(idx[0], "#name\trepo\tcommit\tkind")
         got = {l.split("\t")[0]: l.split("\t")[2] for l in idx[1:]}
         self.assertEqual(got, self.pins())
-        self.assertNotIn(OLD, got.values())
+        self.assertEqual(got["aaa"], NEW["aaa"])
 
 
 if __name__ == "__main__":
