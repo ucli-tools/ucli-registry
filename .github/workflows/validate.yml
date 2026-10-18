@@ -1,0 +1,35 @@
+name: Validate Registry
+
+# Runs for hand edits. NOT a required check: PRs opened with GITHUB_TOKEN do not
+# trigger pull_request workflows, so requiring it would block every bot PR.
+# update-versions.yml runs the same checks before it opens a PR.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'registry/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/validate.yml'
+  pull_request:
+    paths:
+      - 'registry/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/validate.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pyyaml
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/validate.py

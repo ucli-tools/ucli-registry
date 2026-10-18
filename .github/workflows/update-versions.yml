@@ -1,112 +1,98 @@
 name: Update Tool Versions
 
+# Pin changes land as pull requests, never as pushes. Dispatch re-pins only the
+# tool named in the payload; the daily run re-pins only tools whose new main
+# commit has all-green check runs. The operator merges the PR.
+
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'registry/apps.yaml'
-      - 'scripts/update-versions.py'
-      - '.github/workflows/update-versions.yml'
   repository_dispatch:
     types: [tool-updated]
   schedule:
-    # Fallback: Run daily at 2 AM UTC if dispatch fails
     - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: 'Run in dry-run mode (no changes made)'
-        required: false
-        default: false
-        type: boolean
       tool_name:
-        description: 'Specific tool to update (leave empty for all)'
+        description: 'Specific tool to re-pin (leave empty for the daily all-green rule)'
         required: false
         type: string
 
+concurrency:
+  group: registry-update
+  cancel-in-progress: false
+
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   update-versions:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+      INPUT_TOOL: ${{ github.event.inputs.tool_name }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pyyaml requests
+        run: python -m pip install pyyaml
 
-      - name: Update tool versions
-        id: update
+      - name: Unit tests and validation (before any write step)
         run: |
-          if [[ "${{ github.event.inputs.dry_run }}" == "true" ]]; then
-            echo "Running in dry-run mode"
-            python scripts/update-versions.py --dry-run --verbose
+          python -m unittest discover -s tests -v
+          python scripts/validate.py
+
+      - name: Re-pin gated tools
+        run: |
+          printf '%s' "$PAYLOAD" > "$RUNNER_TEMP/payload.json"
+          args=(--verbose --pr-body "$RUNNER_TEMP/pr-body.md" --changed "$RUNNER_TEMP/changed.txt")
+          if [ -n "$INPUT_TOOL" ]; then
+            args+=(--tool "$INPUT_TOOL")
           else
-            echo "Running in live mode"
-            python scripts/update-versions.py --verbose
+            args+=(--payload-file "$RUNNER_TEMP/payload.json")
           fi
+          python scripts/update-versions.py "${args[@]}"
 
-      - name: Check for changes
-        id: changes
+      - name: Validate the new registry and check each new pin builds
         run: |
-          if git diff --quiet; then
-            echo "no_changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "no_changes=false" >> $GITHUB_OUTPUT
-          fi
+          python scripts/validate.py
+          while read -r name; do
+            [ -n "$name" ] || continue
+            read -r repo sha < <(python - "$name" <<'PY'
+          import sys, yaml
+          for a in yaml.safe_load(open("registry/apps.yaml"))["apps"]["official"]:
+              if a["name"] == sys.argv[1]:
+                  print(a["repo"].split("/", 1)[1], a["version"])
+          PY
+            )
+            dir="$RUNNER_TEMP/pin-$name"
+            git init -q "$dir"
+            git -C "$dir" fetch -q --depth 1 "https://github.com/$repo.git" "$sha"
+            git -C "$dir" checkout -q FETCH_HEAD
+            if ! LC_ALL=C make -C "$dir" -n build >/dev/null 2>&1; then
+              echo "::error::make -n build failed for $name at $sha"
+              exit 1
+            fi
+            echo "ok: $name $sha"
+          done < "$RUNNER_TEMP/changed.txt"
 
-      - name: Commit changes (dispatch events)
-        if: steps.changes.outputs.no_changes == 'false' && github.event_name == 'repository_dispatch'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add registry/apps.yaml
-          git commit -m "chore: update tool versions to latest commit hashes [skip ci]"
-          git push
-
-      - name: Create Pull Request (scheduled runs)
-        if: steps.changes.outputs.no_changes == 'false' && github.event_name == 'schedule'
-        uses: peter-evans/create-pull-request@v5
+      - name: Open pull request
+        # peter-evans/create-pull-request v8.1.1
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update tool versions to latest commit hashes"
-          title: "🔄 Update Tool Versions"
-          body: |
-            ## 🔄 Automated Tool Version Update
-
-            This PR updates the tool versions in the registry to the latest commit hashes from their respective repositories.
-
-            ### Changes:
-            - Updated commit hashes for all official UCLI tools
-            - Ensures reproducible builds with pinned versions
-            - Maintains version tracking for rollback capabilities
-
-            ### Tools Updated:
-            All official UCLI tools have been updated to their latest commits.
-
-            ---
-            🤖 This PR was automatically created by the version update workflow.
+          token: ${{ github.token }}
+          add-paths: registry/apps.yaml
+          commit-message: "chore: update tool pins"
+          title: "Update tool pins"
+          body-path: ${{ runner.temp }}/pr-body.md
           branch: automated/version-updates
           delete-branch: true
           labels: |
             automated
             version-update
-          assignees: ${{ github.actor }}
-
-      - name: Notify on failure
-        if: failure() && github.event_name == 'schedule'
-        run: |
-          echo "Version update failed. Manual intervention may be required."

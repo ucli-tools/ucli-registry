@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
-"""
-UCLI Registry Version Updater
+"""UCLI Registry version updater (gated).
 
-Fetches latest commit hashes for all official UCLI tools and updates the registry
-with precise commit-based versioning for reproducible builds.
-
-Usage:
-    python update-versions.py [--dry-run] [--verbose]
+Modes:
+  --tool NAME   re-pin only NAME to its main tip (repository_dispatch).
+                NAME may be "repo", "owner/repo" or a github.com URL.
+  (no --tool)   daily run: re-pin a tool only when its new main commit has
+                check runs and all of them are green. Red, pending or
+                unchecked commits are NOT pinned and are listed for review.
 
 Options:
-    --dry-run    Show what would be changed without modifying files
-    --verbose    Show detailed output
+  --payload-file F   read the dispatch client_payload JSON from F and take the
+                     tool from "name", else "tool" (the old payload, which
+                     already carries owner/repo). An empty or tool-less payload
+                     falls back to the daily all-green rule.
+  --pr-body F        write a markdown PR body listing every decision to F
+  --changed F        write the names of re-pinned tools, one per line, to F
+  --dry-run, --verbose
 """
 
 import argparse
@@ -21,233 +26,226 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
-from urllib.request import urlopen
-from urllib.error import URLError
 
 import yaml
 
+GREEN = {"success", "neutral", "skipped"}
+
+
+def gh_api(path: str):
+    """Call `gh api` and return parsed JSON (None on failure). Mocked in tests."""
+    r = subprocess.run(["gh", "api", path], capture_output=True, text=True)
+    if r.returncode != 0:
+        print(f"[ERROR] gh api {path}: {r.stderr.strip()}", file=sys.stderr)
+        return None
+    return json.loads(r.stdout)
+
+
+def owner_repo(repo_url: str) -> Optional[Tuple[str, str]]:
+    m = re.match(r"(?:https?://)?github\.com/([^/]+)/([^/]+?)(?:\.git)?/?$", repo_url)
+    return m.groups() if m else None
+
+
+def normalize_tool(value: Optional[str]) -> Optional[str]:
+    """'ucli-tools/docx2md', 'github.com/x/docx2md' or 'docx2md' -> 'docx2md'."""
+    if not value or not isinstance(value, str):
+        return None
+    value = value.strip().rstrip("/")
+    if value.endswith(".git"):
+        value = value[:-4]
+    value = value.split("/")[-1]
+    return value or None
+
+
+def tool_from_payload(payload: Optional[Dict]) -> Optional[str]:
+    if not isinstance(payload, dict):
+        return None
+    return normalize_tool(payload.get("name")) or normalize_tool(payload.get("tool"))
+
+
+def latest_commit(repo_url: str) -> Optional[Dict]:
+    pr = owner_repo(repo_url)
+    if not pr:
+        print(f"[ERROR] Invalid GitHub URL format: {repo_url}", file=sys.stderr)
+        return None
+    o, r = pr
+    data = gh_api(f"repos/{o}/{r}/commits?per_page=1")
+    if not data:
+        return None
+    c = data[0]
+    sha = c["sha"]
+    d = datetime.fromisoformat(c["commit"]["committer"]["date"].replace("Z", "+00:00"))
+    return {
+        "hash": sha,
+        "short_hash": sha[:8],
+        "date": d.strftime("%Y-%m-%d %H:%M:%S UTC"),
+        "message": c["commit"]["message"].split("\n")[0],
+        "url": f"https://github.com/{o}/{r}/commit/{sha}",
+    }
+
+
+def check_status(repo_url: str, sha: str) -> Tuple[str, str]:
+    """Return (state, detail); state in green|red|pending|unchecked|unknown."""
+    pr = owner_repo(repo_url)
+    if not pr:
+        return "unknown", "bad repo URL"
+    o, r = pr
+    data = gh_api(f"repos/{o}/{r}/commits/{sha}/check-runs")
+    if data is None:
+        return "unknown", "check-runs query failed"
+    runs = data.get("check_runs", [])
+    if not runs:
+        return "unchecked", "no check runs"
+    bad = [c["name"] for c in runs if c.get("status") == "completed" and c.get("conclusion") not in GREEN]
+    if bad:
+        return "red", "failing: " + ", ".join(bad)
+    waiting = [c["name"] for c in runs if c.get("status") != "completed"]
+    if waiting:
+        return "pending", "not finished: " + ", ".join(waiting)
+    return "green", f"{len(runs)} check run(s) green"
+
 
 class RegistryUpdater:
-    def __init__(self, dry_run: bool = False, verbose: bool = False):
+    def __init__(self, dry_run=False, verbose=False, tool=None, registry_file=None):
         self.dry_run = dry_run
         self.verbose = verbose
-        self.registry_file = Path(__file__).parent.parent / "registry" / "apps.yaml"
-
-    def log(self, message: str) -> None:
-        """Log message if verbose mode is enabled."""
-        if self.verbose:
-            print(f"[INFO] {message}")
+        self.tool = normalize_tool(tool)
+        self.registry_file = Path(registry_file) if registry_file else (
+            Path(__file__).parent.parent / "registry" / "apps.yaml")
+        self.decisions: List[Dict] = []
 
     def error(self, message: str) -> None:
-        """Log error message."""
         print(f"[ERROR] {message}", file=sys.stderr)
 
-    def get_github_commit_info(self, repo_url: str) -> Optional[Dict]:
-        """
-        Fetch latest commit information from GitHub API.
-
-        Args:
-            repo_url: GitHub repository URL (e.g., 'github.com/ucli-tools/gits')
-
-        Returns:
-            Dict with commit hash, date, and message, or None if failed
-        """
-        try:
-            # Extract owner/repo from URL
-            match = re.match(r"github\.com/([^/]+)/([^/]+)", repo_url)
-            if not match:
-                self.error(f"Invalid GitHub URL format: {repo_url}")
-                return None
-
-            owner, repo = match.groups()
-
-            # GitHub API URL for latest commit on default branch
-            api_url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1"
-
-            self.log(f"Fetching latest commit for {owner}/{repo}")
-
-            with urlopen(api_url) as response:
-                data = json.loads(response.read().decode())
-
-            if not data:
-                self.error(f"No commits found for {owner}/{repo}")
-                return None
-
-            commit = data[0]
-            commit_hash = commit['sha']
-            commit_date = commit['commit']['committer']['date']
-            commit_message = commit['commit']['message'].split('\n')[0]  # First line only
-
-            # Parse and format date
-            parsed_date = datetime.fromisoformat(commit_date.replace('Z', '+00:00'))
-            formatted_date = parsed_date.strftime('%Y-%m-%d %H:%M:%S UTC')
-
-            return {
-                'hash': commit_hash,
-                'short_hash': commit_hash[:8],
-                'date': formatted_date,
-                'message': commit_message,
-                'url': f"https://github.com/{owner}/{repo}/commit/{commit_hash}"
-            }
-
-        except URLError as e:
-            self.error(f"Network error fetching {repo_url}: {e}")
-            return None
-        except json.JSONDecodeError as e:
-            self.error(f"JSON parsing error for {repo_url}: {e}")
-            return None
-        except Exception as e:
-            self.error(f"Unexpected error fetching {repo_url}: {e}")
-            return None
-
-    def update_app_version(self, app: Dict) -> Tuple[bool, str]:
-        """
-        Update a single app's version information.
-
-        Args:
-            app: App dictionary from registry
-
-        Returns:
-            Tuple of (updated: bool, message: str)
-        """
-        repo_url = app.get('repo', '')
-        current_version = app.get('version', '')
-
-        if not repo_url:
-            return False, "No repository URL specified"
-
-        commit_info = self.get_github_commit_info(repo_url)
-        if not commit_info:
-            return False, "Failed to fetch commit information"
-
-        new_version = commit_info['hash']
-
-        if current_version == new_version:
-            return False, f"Already at latest version {commit_info['short_hash']}"
-
-        # Update app with new version info
-        app['version'] = new_version
-
-        # Add additional metadata
-        if 'version_info' not in app:
-            app['version_info'] = {}
-
-        app['version_info'].update({
-            'commit_date': commit_info['date'],
-            'commit_message': commit_info['message'],
-            'commit_url': commit_info['url'],
-            'updated_at': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
-        })
-
-        short_hash = commit_info['short_hash']
-        message = commit_info['message'][:50] + ('...' if len(commit_info['message']) > 50 else '')
-
-        return True, f"Updated to {short_hash}: {message}"
-
     def load_registry(self) -> Optional[Dict]:
-        """Load the registry YAML file."""
         try:
-            with open(self.registry_file, 'r', encoding='utf-8') as f:
+            with open(self.registry_file, "r", encoding="utf-8") as f:
                 return yaml.safe_load(f)
         except FileNotFoundError:
             self.error(f"Registry file not found: {self.registry_file}")
-            return None
         except yaml.YAMLError as e:
             self.error(f"Error parsing YAML: {e}")
-            return None
+        return None
 
     def save_registry(self, registry: Dict) -> bool:
-        """Save the registry YAML file."""
         try:
-            # Update metadata
-            registry['metadata']['last_updated'] = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
-
+            registry["metadata"]["last_updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
             if not self.dry_run:
-                with open(self.registry_file, 'w', encoding='utf-8') as f:
+                with open(self.registry_file, "w", encoding="utf-8") as f:
                     yaml.safe_dump(registry, f, default_flow_style=False, sort_keys=False,
-                                 allow_unicode=True, indent=2)
-
+                                   allow_unicode=True, indent=2)
             return True
         except Exception as e:
             self.error(f"Error saving registry: {e}")
             return False
 
-    def update_all_versions(self) -> bool:
-        """Update version information for all official apps."""
-        print("🔄 UCLI Registry Version Updater")
-        print("=" * 50)
+    def decide(self, app: Dict) -> Dict:
+        """Decide for one app; mutate it when the pin should change."""
+        name = app.get("name", "unknown")
+        repo = app.get("repo", "")
+        old = app.get("version", "")
+        d = {"name": name, "old": old, "new": old, "action": "kept", "status": "n/a", "note": ""}
+        if not repo:
+            d["note"] = "no repository URL"
+            return d
+        info = latest_commit(repo)
+        if not info:
+            d["note"] = "could not fetch latest commit"
+            return d
+        d["new"] = info["hash"]
+        if info["hash"] == old:
+            d["note"] = "already at latest"
+            d["new"] = old
+            return d
+        state, detail = check_status(repo, info["hash"])
+        d["status"] = state
+        d["note"] = f"{info['short_hash']}: {info['message'][:60]}; {detail}"
+        # A named dispatch is gated by the tool's own tests (slice 4); the daily run
+        # pins only all-green commits.
+        if self.tool is None and state != "green":
+            d["action"] = "needs review"
+            d["new"] = info["hash"]
+            return d
+        app["version"] = info["hash"]
+        app.setdefault("version_info", {}).update({
+            "commit_date": info["date"],
+            "commit_message": info["message"],
+            "commit_url": info["url"],
+            "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+        })
+        d["action"] = "re-pinned"
+        return d
 
+    def run(self) -> bool:
         registry = self.load_registry()
         if not registry:
             return False
-
-        official_apps = registry.get('apps', {}).get('official', [])
-        if not official_apps:
+        apps = registry.get("apps", {}).get("official", [])
+        if not apps:
             self.error("No official apps found in registry")
             return False
-
-        print(f"📦 Found {len(official_apps)} official tools")
-        print()
-
-        updated_count = 0
-        failed_count = 0
-
-        for app in official_apps:
-            app_name = app.get('name', 'unknown')
-            print(f"🔍 Checking {app_name}...")
-
-            updated, message = self.update_app_version(app)
-
-            if updated:
-                print(f"  ✅ {message}")
-                updated_count += 1
-            else:
-                print(f"  ⏭️  {message}")
-
-            print()
-
-        # Save registry
-        if updated_count > 0:
-            if self.save_registry(registry):
-                print(f"💾 Registry saved successfully")
-            else:
-                print(f"❌ Failed to save registry")
+        targets = apps
+        if self.tool:
+            targets = [a for a in apps if a.get("name") == self.tool]
+            if not targets:
+                self.decisions.append({"name": self.tool, "old": "", "new": "", "action": "kept",
+                                       "status": "n/a", "note": "not an official tool in the registry"})
+        for app in targets:
+            d = self.decide(app)
+            self.decisions.append(d)
+            print(f"{app.get('name')}: {d['action']} ({d['status']}) {d['note']}")
+        if any(d["action"] == "re-pinned" for d in self.decisions):
+            if not self.save_registry(registry):
                 return False
         else:
-            print(f"📋 No updates needed")
-
-        print()
-        print("📊 Summary:")
-        print(f"  • Tools checked: {len(official_apps)}")
-        print(f"  • Updated: {updated_count}")
-        print(f"  • Failed: {failed_count}")
-        print(f"  • Mode: {'DRY RUN' if self.dry_run else 'LIVE UPDATE'}")
-
+            print("No pin changes")
         return True
+
+    def changed(self) -> List[str]:
+        return [d["name"] for d in self.decisions if d["action"] == "re-pinned"]
+
+    def pr_body(self) -> str:
+        mode = f"dispatch for `{self.tool}`" if self.tool else "daily run (green commits only)"
+        lines = ["## Tool pin update", "", f"Trigger: {mode}.", "",
+                 "| Tool | Old pin | New pin | Check status | Action |", "|---|---|---|---|---|"]
+        for d in self.decisions:
+            if d["action"] == "kept" and not d["note"].startswith("not an official"):
+                continue
+            lines.append(f"| {d['name']} | `{d['old'][:8]}` | `{d['new'][:8]}` | {d['status']} | {d['action']} |")
+        flagged = [d for d in self.decisions if d["status"] in ("red", "unchecked", "pending", "unknown")]
+        if flagged:
+            lines += ["", "### Flagged: red, pending or unchecked commits", ""]
+            for d in flagged:
+                verb = "pinned anyway (named dispatch)" if d["action"] == "re-pinned" else "NOT pinned, needs review"
+                lines.append(f"- **{d['name']}** ({d['status']}): {d['note']} - {verb}")
+        lines += ["", "Validated by `validate.py`, the unit tests and `make -n build` on every new pin before this PR was opened. Merge is by the operator."]
+        return "\n".join(lines) + "\n"
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Update UCLI Registry with latest commit hashes for reproducible builds"
-    )
-    parser.add_argument(
-        '--dry-run',
-        action='store_true',
-        help='Show what would be changed without modifying files'
-    )
-    parser.add_argument(
-        '--verbose', '-v',
-        action='store_true',
-        help='Show detailed output'
-    )
+    p = argparse.ArgumentParser(description="Update UCLI Registry pins (gated)")
+    p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--verbose", "-v", action="store_true")
+    p.add_argument("--tool")
+    p.add_argument("--payload-file")
+    p.add_argument("--pr-body")
+    p.add_argument("--changed")
+    a = p.parse_args()
 
-    args = parser.parse_args()
+    tool = a.tool
+    if not tool and a.payload_file and Path(a.payload_file).is_file():
+        try:
+            tool = tool_from_payload(json.loads(Path(a.payload_file).read_text() or "null"))
+        except json.JSONDecodeError:
+            tool = None
+    u = RegistryUpdater(dry_run=a.dry_run, verbose=a.verbose, tool=tool)
+    ok = u.run()
+    if a.pr_body:
+        Path(a.pr_body).write_text(u.pr_body())
+    if a.changed:
+        Path(a.changed).write_text("".join(n + "\n" for n in u.changed()))
+    sys.exit(0 if ok else 1)
 
-    updater = RegistryUpdater(dry_run=args.dry_run, verbose=args.verbose)
-    success = updater.update_all_versions()
 
-    sys.exit(0 if success else 1)
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
