@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 00:43:22 UTC
+  last_updated: 2026-10-18 00:43:51 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -124,7 +124,7 @@ apps:
     - files
     - utilities
     - format
-    version: ab7e69a893d4107186898274568978dd2d32b2a4
+    version: 0c1b0171e957f389f017f32aa8356441ef3a20fe
     versioning:
       primary: git_commit
       fallback: semantic
@@ -134,10 +134,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:22:27 UTC
-      commit_message: 'docs: fix missing newline at end of README.md'
-      commit_url: https://github.com/ucli-tools/convft/commit/ab7e69a893d4107186898274568978dd2d32b2a4
-      updated_at: 2025-12-23 04:22:37 UTC
+      commit_date: 2026-10-18 00:43:24 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/convft/commit/0c1b0171e957f389f017f32aa8356441ef3a20fe
+      updated_at: 2026-10-18 00:43:49 UTC
   - name: isobootmaker
     repo: github.com/ucli-tools/isobootmaker
     description: Create bootable ISO images for various operating systems
@@ -452,7 +452,7 @@ apps:
     - mining
     - zano
     - blockchain
-    version: 3f888595e273ecc2a59fb13301fc42e7c8dba532
+    version: c2bedf8b8db0fd1722bf574ce7634c56ed5a01c1
     versioning:
       primary: git_commit
       fallback: semantic
@@ -462,10 +462,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:22:24 UTC
-      commit_message: 'docs: fix missing newline at end of README.md'
-      commit_url: https://github.com/ucli-tools/zanominer/commit/3f888595e273ecc2a59fb13301fc42e7c8dba532
-      updated_at: 2025-12-23 04:22:39 UTC
+      commit_date: 2026-10-18 00:43:36 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/zanominer/commit/c2bedf8b8db0fd1722bf574ce7634c56ed5a01c1
+      updated_at: 2026-10-18 00:43:51 UTC
   community: []
   templates:
   - name: k3scluster
