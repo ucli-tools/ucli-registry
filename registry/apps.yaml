@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 00:44:19 UTC
+  last_updated: 2026-10-18 01:52:37 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -17,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: 225f80cc54b3fcb9594bc0dffd88c951f683eb3d
+    version: 53a84533431ae59cd68c7dd644176061947165b0
     versioning:
       primary: git_commit
       fallback: semantic
@@ -27,11 +27,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-18 00:32:56 UTC
-      commit_message: 'Add test harness: plain-bash characterisation tests, bash-4
-        grep, shellcheck, CI on Linux and macOS'
-      commit_url: https://github.com/ucli-tools/ucli/commit/225f80cc54b3fcb9594bc0dffd88c951f683eb3d
-      updated_at: 2026-10-18 00:33:39 UTC
+      commit_date: 2026-10-18 01:15:53 UTC
+      commit_message: 'Small conveniences: requires: key, prereq on dnf/pacman/brew,
+        login note'
+      commit_url: https://github.com/ucli-tools/ucli/commit/53a84533431ae59cd68c7dd644176061947165b0
+      updated_at: 2026-10-18 01:17:01 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
@@ -175,7 +175,7 @@ apps:
     - distributed
     - management
     - orchestration
-    version: 5623829bdde71cfec81e575c23a1633054155e33
+    version: 34f043d9c316a8f9e2fac33ebfde5ca939edf739
     versioning:
       primary: git_commit
       fallback: semantic
@@ -185,10 +185,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:22:10 UTC
-      commit_message: 'docs: fix missing newline at end of README'
-      commit_url: https://github.com/ucli-tools/mcluster/commit/5623829bdde71cfec81e575c23a1633054155e33
-      updated_at: 2025-12-23 04:22:12 UTC
+      commit_date: 2026-10-18 00:44:32 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/mcluster/commit/34f043d9c316a8f9e2fac33ebfde5ca939edf739
+      updated_at: 2026-10-18 01:52:30 UTC
   - name: mdepub
     repo: github.com/ucli-tools/mdepub
     description: Convert Markdown documents to EPUB format
@@ -200,7 +200,7 @@ apps:
     - epub
     - ebooks
     - conversion
-    version: 8b9d7de00f71a605b5452e0866b1af45bd9d8a3c
+    version: 5b374866763a0955ffa7a83c085ec66f4e805434
     versioning:
       primary: git_commit
       fallback: semantic
@@ -210,10 +210,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:25 UTC
-      commit_message: 'docs: add blank line at end of README'
-      commit_url: https://github.com/ucli-tools/mdepub/commit/8b9d7de00f71a605b5452e0866b1af45bd9d8a3c
-      updated_at: 2025-12-23 04:21:43 UTC
+      commit_date: 2026-10-18 00:46:43 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/mdepub/commit/5b374866763a0955ffa7a83c085ec66f4e805434
+      updated_at: 2026-10-18 01:52:31 UTC
   - name: mdtodocu
     repo: github.com/ucli-tools/mdtodocu
     description: Generate documentation from Markdown files
@@ -225,7 +225,7 @@ apps:
     - documentation
     - generation
     - docs
-    version: 18c6eed07f0ff53e35677a327442a4b7eb97e200
+    version: dc5f564f377f6a954637ed63e9ba6b1786f02900
     versioning:
       primary: git_commit
       fallback: semantic
@@ -235,10 +235,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:50 UTC
-      commit_message: 'docs: add trailing newline to README.md'
-      commit_url: https://github.com/ucli-tools/mdtodocu/commit/18c6eed07f0ff53e35677a327442a4b7eb97e200
-      updated_at: 2025-12-23 04:22:00 UTC
+      commit_date: 2026-10-18 00:45:38 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/mdtodocu/commit/dc5f564f377f6a954637ed63e9ba6b1786f02900
+      updated_at: 2026-10-18 01:52:31 UTC
   - name: monerominer
     repo: github.com/ucli-tools/monerominer
     description: Monero cryptocurrency mining utilities
@@ -250,7 +250,7 @@ apps:
     - mining
     - monero
     - blockchain
-    version: 9ba7430082b7bdfda923d1faa2ce90c492f3008a
+    version: 7e0ed8afe624df31ff04de14affbe6e63493e8f0
     versioning:
       primary: git_commit
       fallback: semantic
@@ -260,10 +260,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:22:13 UTC
-      commit_message: 'docs: fix missing newline at end of README.md'
-      commit_url: https://github.com/ucli-tools/monerominer/commit/9ba7430082b7bdfda923d1faa2ce90c492f3008a
-      updated_at: 2025-12-23 04:22:37 UTC
+      commit_date: 2026-10-18 00:44:18 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/monerominer/commit/7e0ed8afe624df31ff04de14affbe6e63493e8f0
+      updated_at: 2026-10-18 01:52:32 UTC
   - name: docx2md
     repo: github.com/ucli-tools/docx2md
     description: Convert Microsoft Office documents to Markdown
@@ -275,7 +275,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 2ff3e8466df470aef11295c5848dc0702ec1684c
+    version: 7c6623670c10107e86468bc98140a3ea2e68e3f2
     versioning:
       primary: git_commit
       fallback: semantic
@@ -285,10 +285,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-18 00:31:01 UTC
-      commit_message: 'ci: send the registry dispatch only after the tests pass'
-      commit_url: https://github.com/ucli-tools/docx2md/commit/2ff3e8466df470aef11295c5848dc0702ec1684c
-      updated_at: 2026-10-18 00:32:21 UTC
+      commit_date: 2026-10-18 00:48:24 UTC
+      commit_message: 'fix: equation counts and custom delimiters; tests follow the
+        cli and frontmatter changes'
+      commit_url: https://github.com/ucli-tools/docx2md/commit/7c6623670c10107e86468bc98140a3ea2e68e3f2
+      updated_at: 2026-10-18 01:52:33 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
@@ -300,7 +301,7 @@ apps:
     - quick
     - formatting
     - generation
-    version: ef30fadd43362662b39becf300a2bfe353c9be81
+    version: 196582398a21affb6978d17dd32649681a59984d
     versioning:
       primary: git_commit
       fallback: semantic
@@ -310,10 +311,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:28 UTC
-      commit_message: 'docs: add trailing newline to README.md'
-      commit_url: https://github.com/ucli-tools/quickdocu/commit/ef30fadd43362662b39becf300a2bfe353c9be81
-      updated_at: 2025-12-23 04:21:44 UTC
+      commit_date: 2026-10-18 00:46:29 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/quickdocu/commit/196582398a21affb6978d17dd32649681a59984d
+      updated_at: 2026-10-18 01:52:33 UTC
   - name: tfbootmaker
     repo: github.com/ucli-tools/tfbootmaker
     description: ThreeFold grid boot image creation utilities
@@ -350,7 +351,7 @@ apps:
     - cluster
     - data
     - management
-    version: 7e25feea391ae56e968658f5e4479334b69fceb4
+    version: 577481233eb17f90f29ebc895cb01f3bd32d36a6
     versioning:
       primary: git_commit
       fallback: semantic
@@ -360,10 +361,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:53 UTC
-      commit_message: 'docs: add blank line at end of README file'
-      commit_url: https://github.com/ucli-tools/tscluster/commit/7e25feea391ae56e968658f5e4479334b69fceb4
-      updated_at: 2025-12-23 04:22:01 UTC
+      commit_date: 2026-10-18 00:45:25 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/tscluster/commit/577481233eb17f90f29ebc895cb01f3bd32d36a6
+      updated_at: 2026-10-18 01:52:34 UTC
   - name: ubungpu
     repo: github.com/ucli-tools/ubungpu
     description: Ubuntu GPU setup and configuration utilities
@@ -376,7 +377,7 @@ apps:
     - nvidia
     - setup
     - configuration
-    version: a1be8fed45b1889a5fcc419734d81d40ae856e1a
+    version: a9c4554662c749b5892e6e3f4c0555ab6483549a
     versioning:
       primary: git_commit
       fallback: semantic
@@ -386,10 +387,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:30 UTC
-      commit_message: 'docs: add newline at end of README.md file'
-      commit_url: https://github.com/ucli-tools/ubungpu/commit/a1be8fed45b1889a5fcc419734d81d40ae856e1a
-      updated_at: 2025-12-23 04:21:44 UTC
+      commit_date: 2026-10-18 00:46:16 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/ubungpu/commit/a9c4554662c749b5892e6e3f4c0555ab6483549a
+      updated_at: 2026-10-18 01:52:35 UTC
   - name: ubuntail
     repo: github.com/ucli-tools/ubuntail
     description: Ubuntu system administration and automation tools
@@ -401,7 +402,7 @@ apps:
     - system
     - administration
     - automation
-    version: d2d0fffb0f0829de10b8f298a55ff130680e49a7
+    version: 940f53134374b7fa5a59cecdb67ef5911e66d599
     versioning:
       primary: git_commit
       fallback: semantic
@@ -411,10 +412,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:40 UTC
-      commit_message: 'docs: fix trailing newline in README.md'
-      commit_url: https://github.com/ucli-tools/ubuntail/commit/d2d0fffb0f0829de10b8f298a55ff130680e49a7
-      updated_at: 2025-12-23 04:21:45 UTC
+      commit_date: 2026-10-18 00:45:51 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/ubuntail/commit/940f53134374b7fa5a59cecdb67ef5911e66d599
+      updated_at: 2026-10-18 01:52:36 UTC
   - name: xrdps
     repo: github.com/ucli-tools/xrdps
     description: XRDP remote desktop server management
@@ -427,7 +428,7 @@ apps:
     - xrdp
     - rdp
     - server
-    version: 0af8b4003b1a3e3d4756a306ea3cb9c43daada18
+    version: c48558b54241e79a8a33a01c9d3298747fda7749
     versioning:
       primary: git_commit
       fallback: semantic
@@ -437,10 +438,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:22:02 UTC
-      commit_message: 'docs: add blank line at end of README'
-      commit_url: https://github.com/ucli-tools/xrdps/commit/0af8b4003b1a3e3d4756a306ea3cb9c43daada18
-      updated_at: 2025-12-23 04:22:14 UTC
+      commit_date: 2026-10-18 00:44:45 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/xrdps/commit/c48558b54241e79a8a33a01c9d3298747fda7749
+      updated_at: 2026-10-18 01:52:37 UTC
   - name: zanominer
     repo: github.com/ucli-tools/zanominer
     description: Zano cryptocurrency mining utilities
