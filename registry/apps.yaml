@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-17 17:31:06 UTC
+  last_updated: 2026-10-18 00:22:35 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -17,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: ca58a14c934c2bd6532cec91ea032c679c66eb60
+    version: 4f289297718aac88815948934a90ef5caf354223
     versioning:
       primary: git_commit
       fallback: semantic
@@ -27,11 +27,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:33:46 UTC
-      commit_message: 'fix: redirect all logging output to stderr for better script
-        piping'
-      commit_url: https://github.com/ucli-tools/ucli/commit/ca58a14c934c2bd6532cec91ea032c679c66eb60
-      updated_at: 2025-12-23 04:34:03 UTC
+      commit_date: 2026-10-18 00:22:04 UTC
+      commit_message: 'Menu: exit cleanly on EOF or non-tty stdin; add EOF test'
+      commit_url: https://github.com/ucli-tools/ucli/commit/4f289297718aac88815948934a90ef5caf354223
+      updated_at: 2026-10-18 00:22:29 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
