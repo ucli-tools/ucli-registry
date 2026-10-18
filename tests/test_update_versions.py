@@ -165,3 +165,105 @@ class Tests(Base):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PendingTests(Base):
+    """Pins pending on the PR branch survive later runs (git and gh mocked)."""
+
+    BR = "origin/automated/version-updates"
+
+    def setUp(self):
+        super().setUp()
+        self.base_text = self.reg.read_text()
+        self.branch_text = None
+        p = mock.patch.object(uv, "git_out", self.fake_git)
+        p.start()
+        self.addCleanup(p.stop)
+
+    def fake_git(self, *args):
+        if args[0] == "merge-base":
+            return "BASE\n"
+        if args[0] == "show":
+            ref = args[1].split(":")[0]
+            if ref == "BASE":
+                return self.base_text
+            if ref == self.BR:
+                return self.branch_text
+        return None
+
+    def upd_p(self, tool=None):
+        u = uv.RegistryUpdater(tool=tool, registry_file=self.reg, pending_from=self.BR)
+        self.assertTrue(u.run())
+        return u
+
+    def finish_run(self, u):
+        """The PR branch after a run = what the run wrote."""
+        self.branch_text = self.reg.read_text()
+        return u
+
+    def reset_main(self, pins=None):
+        apps = [{"name": n, "repo": f"github.com/o/{n}", "version": (pins or {}).get(n, OLD)} for n in NEW]
+        self.reg.write_text(yaml.safe_dump({"metadata": {}, "apps": {"official": apps}}))
+
+    def tsv_ok(self):
+        tsv = (self.reg.parent / "index.tsv").read_text()
+        for n, v in self.pins().items():
+            self.assertIn(f"{n}\tgithub.com/o/{n}\t{v}", tsv)
+
+    def test_daily_then_dispatch_keeps_both(self):
+        CHECKS["aaa"] = [run("success")]
+        CHECKS["bbb"] = [run("success")]
+        self.finish_run(self.upd_p())
+        self.assertEqual(self.pins()["aaa"], NEW["aaa"])
+        self.reset_main()  # next run starts from main again
+        u = self.upd_p(tool="ccc")
+        self.assertEqual(self.pins(), NEW)
+        self.assertEqual(sorted(u.changed()), ["aaa", "bbb", "ccc"])
+        body = u.pr_body()
+        for n in NEW:
+            self.assertEqual(body.count(f"| {n} |"), 1)
+        self.tsv_ok()
+
+    def test_dispatch_replaces_own_older_pending_pin(self):
+        self.base_text = self.reg.read_text()
+        self.branch_text = yaml.safe_dump({"apps": {"official": [
+            {"name": "ccc", "repo": "github.com/o/ccc", "version": "9" * 40}]}})
+        u = self.upd_p(tool="ccc")
+        self.assertEqual(self.pins()["ccc"], NEW["ccc"])
+        self.assertEqual(u.changed(), ["ccc"])
+        self.assertIn(f"`{OLD[:8]}` | `{NEW['ccc'][:8]}`", u.pr_body())
+
+    def test_merged_pin_dropped(self):
+        self.branch_text = yaml.safe_dump({"apps": {"official": [
+            {"name": "aaa", "repo": "github.com/o/aaa", "version": NEW["aaa"]}]}})
+        self.reset_main({"aaa": NEW["aaa"]})  # merged to main
+        CHECKS["aaa"] = [run("success")]
+        u = self.upd_p(tool="bbb")
+        self.assertEqual(u.changed(), ["bbb"])
+        self.assertEqual(self.pins()["aaa"], NEW["aaa"])
+        self.assertNotIn("| aaa |", u.pr_body())
+
+    def test_human_edit_on_main_wins(self):
+        human = "7" * 40
+        self.branch_text = yaml.safe_dump({"apps": {"official": [
+            {"name": "aaa", "repo": "github.com/o/aaa", "version": "9" * 40}]}})
+        self.reset_main({"aaa": human})  # base is OLD, main moved by hand
+        u = self.upd_p(tool="bbb")
+        self.assertEqual(self.pins()["aaa"], human)
+        self.assertEqual(u.changed(), ["bbb"])
+
+    def test_carried_status_refreshed(self):
+        self.branch_text = yaml.safe_dump({"apps": {"official": [
+            {"name": "aaa", "repo": "github.com/o/aaa", "version": "9" * 40}]}})
+        CHECKS["aaa"] = [run("failure")]
+        u = self.upd_p(tool="bbb")
+        row = [d for d in u.decisions if d["name"] == "aaa"][0]
+        self.assertEqual((row["action"], row["status"]), ("carried", "red"))
+        CHECKS["aaa"] = [run("success")]
+        self.reset_main()
+        row = [d for d in self.upd_p(tool="bbb").decisions if d["name"] == "aaa"][0]
+        self.assertEqual(row["status"], "green")
+
+    def test_no_branch_is_plain_run(self):
+        self.branch_text = None
+        self.assertEqual(self.upd_p(tool="aaa").changed(), ["aaa"])

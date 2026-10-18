@@ -16,6 +16,8 @@ Options:
                      falls back to the daily all-green rule.
   --pr-body F        write a markdown PR body listing every decision to F
   --changed F        write the names of re-pinned tools, one per line, to F
+  --pending-from REF read the open PR branch (e.g. origin/automated/version-updates)
+                     and carry its still-pending pins over (see RegistryUpdater.carry_over)
   --dry-run, --verbose
 """
 
@@ -43,6 +45,12 @@ def gh_api(path: str):
         print(f"[ERROR] gh api {path}: {r.stderr.strip()}", file=sys.stderr)
         return None
     return json.loads(r.stdout)
+
+
+def git_out(*args: str) -> Optional[str]:
+    """Run git, return stdout or None on failure. Mocked in tests."""
+    r = subprocess.run(["git", *args], capture_output=True, text=True)
+    return r.stdout if r.returncode == 0 else None
 
 
 def owner_repo(repo_url: str) -> Optional[Tuple[str, str]]:
@@ -131,7 +139,10 @@ def check_status(repo_url: str, sha: str) -> Tuple[str, str]:
 
 class RegistryUpdater:
     def __init__(self, dry_run=False, verbose=False, tool=None, registry_file=None,
-                 sha=None, tested=None):
+                 sha=None, tested=None, pending_from=None):
+        self.pending_from = pending_from
+        self.main_pins: Dict[str, str] = {}
+        self.carried: Dict[str, Dict] = {}
         self.sha = sha if (sha and re.fullmatch(r"[0-9a-f]{40}", sha)) else None
         self.tested = tested
         self.dry_run = dry_run
@@ -212,6 +223,51 @@ class RegistryUpdater:
         d["action"] = "re-pinned"
         return d
 
+    def carry_over(self, apps: List[Dict]) -> None:
+        """Keep every pin change that is still pending on the PR branch.
+
+        The PR branch is rebuilt from main on every run, so without this a later
+        run (e.g. a named dispatch) would erase the pins an earlier run proposed.
+        Approach: main is checked out; the PR branch's apps.yaml is read with
+        `git show`, and its merge-base with main gives the pins the branch started
+        from. A branch pin is PENDING when it differs from that base (the branch
+        changed it) and from main (not merged yet). If main's pin differs from the
+        base, a human edited it on main, and main wins. Only version and
+        version_info are carried; the normal logic then runs on top, so a named
+        tool or the daily rules replace their own older pending pin.
+        """
+        for a in apps:
+            self.main_pins[a.get("name")] = a.get("version", "")
+        if not self.pending_from:
+            return
+        theirs = git_out("show", f"{self.pending_from}:registry/apps.yaml")
+        if not theirs:
+            return
+        mb = (git_out("merge-base", "HEAD", self.pending_from) or "").strip()
+        base_text = git_out("show", f"{mb}:registry/apps.yaml") if mb else None
+        try:
+            branch_apps = yaml.safe_load(theirs)["apps"]["official"]
+            base_apps = yaml.safe_load(base_text)["apps"]["official"] if base_text else []
+        except (yaml.YAMLError, KeyError, TypeError):
+            self.error("could not parse the PR branch registry; nothing carried over")
+            return
+        base_pins = {a.get("name"): a.get("version") for a in base_apps}
+        by_name = {a.get("name"): a for a in apps}
+        for b in branch_apps:
+            name, ver = b.get("name"), b.get("version")
+            cur = by_name.get(name)
+            if cur is None or not ver or ver == cur.get("version"):
+                continue  # unknown tool, or already merged to main
+            base = base_pins.get(name, cur.get("version"))
+            if cur.get("version") != base:
+                continue  # a human changed it on main: main wins
+            if ver == base:
+                continue  # the branch did not change it
+            cur["version"] = ver
+            if b.get("version_info"):
+                cur["version_info"] = b["version_info"]
+            self.carried[name] = {"pin": ver}
+
     def run(self) -> bool:
         registry = self.load_registry()
         if not registry:
@@ -220,17 +276,44 @@ class RegistryUpdater:
         if not apps:
             self.error("No official apps found in registry")
             return False
+        self.carry_over(apps)
         targets = apps
         if self.tool:
             targets = [a for a in apps if a.get("name") == self.tool]
             if not targets:
                 self.decisions.append({"name": self.tool, "old": "", "new": "", "action": "kept",
                                        "status": "n/a", "note": "not an official tool in the registry"})
+        done = set()
         for app in targets:
+            name = app.get("name")
             d = self.decide(app)
-            self.decisions.append(d)
-            print(f"{app.get('name')}: {d['action']} ({d['status']}) {d['note']}")
-        if any(d["action"] == "re-pinned" for d in self.decisions):
+            if name in self.carried:
+                if d["action"] == "re-pinned":
+                    pass  # this run supersedes the older pending pin
+                else:
+                    # keep the carried pin; its status is refreshed below
+                    if d["action"] == "needs review":
+                        self.carried[name]["extra"] = f"newer tip not pinned ({d['status']}): {d['note']}"
+                    d = None
+            if d:
+                if d["action"] == "re-pinned":
+                    d["old"] = self.main_pins.get(name, d["old"])
+                    self.carried.pop(name, None)
+                self.decisions.append(d)
+                print(f"{name}: {d['action']} ({d['status']}) {d['note']}")
+        # Carried pins this run did not touch: refresh status so a pin whose checks
+        # have finished shows its final green or red, not an old "pending".
+        for app in apps:
+            name = app.get("name")
+            if name not in self.carried:
+                continue
+            c = self.carried[name]
+            state, detail = check_status(app.get("repo", ""), c["pin"])
+            note = f"{c['pin'][:8]}: {detail}" + (f"; {c['extra']}" if c.get("extra") else "")
+            self.decisions.append({"name": name, "old": self.main_pins.get(name, ""), "new": c["pin"],
+                                   "action": "carried", "status": state, "note": note})
+            print(f"{name}: carried ({state}) {note}")
+        if any(d["action"] in ("re-pinned", "carried") for d in self.decisions):
             if not self.save_registry(registry):
                 return False
         else:
@@ -238,7 +321,7 @@ class RegistryUpdater:
         return True
 
     def changed(self) -> List[str]:
-        return [d["name"] for d in self.decisions if d["action"] == "re-pinned"]
+        return [d["name"] for d in self.decisions if d["action"] in ("re-pinned", "carried")]
 
     def pr_body(self) -> str:
         mode = f"dispatch for `{self.tool}`" if self.tool else "daily run (green and untested commits; red, pending, unchecked kept)"
@@ -252,7 +335,8 @@ class RegistryUpdater:
         if flagged:
             lines += ["", "### Flagged: red, pending or unchecked commits", ""]
             for d in flagged:
-                verb = "pinned anyway (named dispatch)" if d["action"] == "re-pinned" else "NOT pinned, needs review"
+                verb = {"re-pinned": "pinned anyway (named dispatch)",
+                        "carried": "pinned in this PR"}.get(d["action"], "NOT pinned, needs review")
                 lines.append(f"- **{d['name']}** ({d['status']}): {d['note']} - {verb}")
         lines += ["", "Validated by `validate.py`, the unit tests and `make -n build` on every new pin before this PR was opened. Merge is by the operator."]
         return "\n".join(lines) + "\n"
@@ -266,6 +350,7 @@ def main():
     p.add_argument("--payload-file")
     p.add_argument("--pr-body")
     p.add_argument("--changed")
+    p.add_argument("--pending-from")
     a = p.parse_args()
 
     tool = a.tool
@@ -279,7 +364,8 @@ def main():
                 tested = pl.get("tested") if isinstance(pl.get("tested"), bool) else None
         except json.JSONDecodeError:
             tool = None
-    u = RegistryUpdater(dry_run=a.dry_run, verbose=a.verbose, tool=tool, sha=sha, tested=tested)
+    u = RegistryUpdater(dry_run=a.dry_run, verbose=a.verbose, tool=tool, sha=sha, tested=tested,
+                        pending_from=a.pending_from)
     ok = u.run()
     if a.pr_body:
         Path(a.pr_body).write_text(u.pr_body())

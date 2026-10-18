@@ -35,6 +35,9 @@ jobs:
       INPUT_TOOL: ${{ github.event.inputs.tool_name }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # full history: the pending-pin merge needs the PR branch and its merge-base
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -51,7 +54,7 @@ jobs:
       - name: Re-pin gated tools
         run: |
           printf '%s' "$PAYLOAD" > "$RUNNER_TEMP/payload.json"
-          args=(--verbose --pr-body "$RUNNER_TEMP/pr-body.md" --changed "$RUNNER_TEMP/changed.txt")
+          args=(--verbose --pending-from origin/automated/version-updates --pr-body "$RUNNER_TEMP/pr-body.md" --changed "$RUNNER_TEMP/changed.txt")
           if [ -n "$INPUT_TOOL" ]; then
             args+=(--tool "$INPUT_TOOL")
           else
