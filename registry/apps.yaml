@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 00:32:22 UTC
+  last_updated: 2026-10-18 00:33:42 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -17,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: 4f289297718aac88815948934a90ef5caf354223
+    version: 225f80cc54b3fcb9594bc0dffd88c951f683eb3d
     versioning:
       primary: git_commit
       fallback: semantic
@@ -27,10 +27,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-18 00:22:04 UTC
-      commit_message: 'Menu: exit cleanly on EOF or non-tty stdin; add EOF test'
-      commit_url: https://github.com/ucli-tools/ucli/commit/4f289297718aac88815948934a90ef5caf354223
-      updated_at: 2026-10-18 00:22:29 UTC
+      commit_date: 2026-10-18 00:32:56 UTC
+      commit_message: 'Add test harness: plain-bash characterisation tests, bash-4
+        grep, shellcheck, CI on Linux and macOS'
+      commit_url: https://github.com/ucli-tools/ucli/commit/225f80cc54b3fcb9594bc0dffd88c951f683eb3d
+      updated_at: 2026-10-18 00:33:39 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
@@ -71,7 +72,7 @@ apps:
     - latex
     - pandoc
     - documentation
-    version: 7fbef5a575f84e18c91e81d902aced2c144ea11e
+    version: b31b49a5fd4b644e8052c00017bff771fe289af1
     versioning:
       primary: git_commit
       fallback: semantic
@@ -81,10 +82,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-12 13:29:45 UTC
-      commit_message: 'fix: the EPUB check reads no colour as text (#22)'
-      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/7fbef5a575f84e18c91e81d902aced2c144ea11e
-      updated_at: 2026-10-17 17:31:00 UTC
+      commit_date: 2026-10-18 00:32:21 UTC
+      commit_message: 'ci: dispatch the registry after CI succeeds on main'
+      commit_url: https://github.com/ucli-tools/mdtexpdf/commit/b31b49a5fd4b644e8052c00017bff771fe289af1
+      updated_at: 2026-10-18 00:33:39 UTC
   - name: mdaudiobook
     repo: github.com/ucli-tools/mdaudiobook
     description: Convert Markdown content to audiobooks and podcasts
