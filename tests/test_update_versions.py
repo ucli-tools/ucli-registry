@@ -43,6 +43,7 @@ class Base(unittest.TestCase):
         apps = [{"name": n, "repo": f"github.com/o/{n}", "version": OLD} for n in NEW]
         self.reg.write_text(yaml.safe_dump({"metadata": {}, "apps": {"official": apps}}))
         self.addCleanup(self.reg.unlink)
+        self.addCleanup((ROOT / "tests" / "index.tsv").unlink, missing_ok=True)
         CHECKS.clear()
         ONMAIN.clear()
         p = mock.patch.object(uv, "gh_api", fake_gh)
@@ -151,6 +152,15 @@ class Tests(Base):
     def test_untested_with_failing_trigger_is_red(self):
         CHECKS["aaa"] = [{"name": "Trigger registry update (untested)", "status": "completed", "conclusion": "failure"}]
         self.assertEqual(self.upd().changed(), [])
+
+
+    def test_repin_regenerates_index_in_agreement(self):
+        self.upd()
+        idx = (ROOT / "tests" / "index.tsv").read_text().splitlines()
+        self.assertEqual(idx[0], "#name\trepo\tcommit\tkind")
+        got = {l.split("\t")[0]: l.split("\t")[2] for l in idx[1:]}
+        self.assertEqual(got, self.pins())
+        self.assertNotIn(OLD, got.values())
 
 
 if __name__ == "__main__":

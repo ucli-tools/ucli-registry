@@ -87,7 +87,9 @@ jobs:
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
         with:
           token: ${{ github.token }}
-          add-paths: registry/apps.yaml
+          add-paths: |
+            registry/apps.yaml
+            registry/index.tsv
           commit-message: "chore: update tool pins"
           title: "Update tool pins"
           body-path: ${{ runner.temp }}/pr-body.md

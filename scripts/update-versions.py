@@ -30,6 +30,9 @@ from typing import Dict, List, Optional, Tuple
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import index_tsv  # noqa: E402
+
 GREEN = {"success", "neutral", "skipped"}
 
 
@@ -158,6 +161,8 @@ class RegistryUpdater:
                 with open(self.registry_file, "w", encoding="utf-8") as f:
                     yaml.safe_dump(registry, f, default_flow_style=False, sort_keys=False,
                                    allow_unicode=True, indent=2)
+                (self.registry_file.parent / "index.tsv").write_text(
+                    index_tsv.render(registry), encoding="utf-8")
             return True
         except Exception as e:
             self.error(f"Error saving registry: {e}")

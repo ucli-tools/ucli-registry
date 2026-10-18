@@ -3,7 +3,7 @@
 
 Checks: required fields, 40-hex pin, unique names across all lists, repo URL
 ends in the entry name, and that the file round-trips through the same dump
-settings update-versions.py uses. Use --online to also check that each repo
+settings update-versions.py uses. index.tsv must match what apps.yaml generates. Use --online to also check that each repo
 URL resolves.
 """
 import re
@@ -12,10 +12,22 @@ from pathlib import Path
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import index_tsv  # noqa: E402
+
 REGISTRY = Path(__file__).parent.parent / "registry" / "apps.yaml"
 REQUIRED = ["name", "repo", "description", "pattern", "status", "maintainer", "tags", "version"]
 LISTS = ["official", "community", "templates"]
 HEX40 = re.compile(r"^[0-9a-f]{40}$")
+
+
+def check_index(data, path: Path) -> list:
+    """index.tsv must equal what apps.yaml generates, byte for byte."""
+    if not path.exists():
+        return [f"{path.name} is missing (generate it with update-versions.py)"]
+    if path.read_bytes().decode("utf-8", "replace") != index_tsv.render(data):
+        return [f"{path.name} disagrees with apps.yaml (a pin or entry was edited by hand)"]
+    return []
 
 
 def main() -> int:
@@ -55,6 +67,7 @@ def main() -> int:
     rt = yaml.safe_dump(data, default_flow_style=False, sort_keys=False, allow_unicode=True, indent=2)
     if rt != text:
         errors.append("apps.yaml does not round-trip with the update-versions.py dump settings")
+    errors.extend(check_index(data, REGISTRY.parent / "index.tsv"))
     for e in errors:
         print(f"[ERROR] {e}", file=sys.stderr)
     total = sum(len(apps.get(l) or []) for l in LISTS)
