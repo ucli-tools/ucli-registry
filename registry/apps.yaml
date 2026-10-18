@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 01:52:37 UTC
+  last_updated: 2026-10-18 04:04:29 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -17,7 +17,7 @@ apps:
     - tool-manager
     - installer
     - bash
-    version: 53a84533431ae59cd68c7dd644176061947165b0
+    version: 84730a9b6c67d338802e11937142e93d7eca90ac
     versioning:
       primary: git_commit
       fallback: semantic
@@ -27,11 +27,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-18 01:15:53 UTC
-      commit_message: 'Small conveniences: requires: key, prereq on dnf/pacman/brew,
-        login note'
-      commit_url: https://github.com/ucli-tools/ucli/commit/53a84533431ae59cd68c7dd644176061947165b0
-      updated_at: 2026-10-18 01:17:01 UTC
+      commit_date: 2026-10-18 04:03:07 UTC
+      commit_message: 'Merge pull request #2 from ucli-tools/trigger-pin-sha'
+      commit_url: https://github.com/ucli-tools/ucli/commit/84730a9b6c67d338802e11937142e93d7eca90ac
+      updated_at: 2026-10-18 04:04:29 UTC
   - name: gits
     repo: github.com/ucli-tools/gits
     description: Git workflow automation supporting Forgejo, Gitea, and GitHub
