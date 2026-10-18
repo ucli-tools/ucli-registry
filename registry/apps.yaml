@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 00:43:51 UTC
+  last_updated: 2026-10-18 00:44:19 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -150,7 +150,7 @@ apps:
     - images
     - os
     - installer
-    version: f63a6edeef8211b40ee1f060e3e2126688018d75
+    version: a4acae6f9f2feeb318d2ae0d3877462c7555d3cb
     versioning:
       primary: git_commit
       fallback: semantic
@@ -160,10 +160,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:22:21 UTC
-      commit_message: 'docs: add trailing newline to README.md'
-      commit_url: https://github.com/ucli-tools/isobootmaker/commit/f63a6edeef8211b40ee1f060e3e2126688018d75
-      updated_at: 2025-12-23 04:22:37 UTC
+      commit_date: 2026-10-18 00:43:50 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/isobootmaker/commit/a4acae6f9f2feeb318d2ae0d3877462c7555d3cb
+      updated_at: 2026-10-18 00:44:17 UTC
   - name: mcluster
     repo: github.com/ucli-tools/mcluster
     description: Node Cluster Over Mycelium
