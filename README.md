@@ -15,15 +15,19 @@ ucli build gits mdtexpdf mdaudiobook
 ```
 ucli-registry/
 ├── registry/
-│   ├── apps.yaml              # Main official tools registry
-│   └── community/             # Community-contributed tools
-│       └── community.yaml
+│   └── apps.yaml              # official, community and templates lists
+├── scripts/
+│   ├── update-versions.py     # pins each official tool to its latest commit
+│   └── validate.py            # checks apps.yaml (run it before a PR)
 ├── docs/
-│   ├── submit-tool.md         # How to submit your tool
-│   ├── verification.md        # Verification process
-│   └── tool-guidelines.md     # Tool development guidelines
+│   └── trigger-registry-update-template.yml
 └── README.md                   # This file
 ```
+
+`apps.yaml` has three lists. `official` holds the tools `ucli list` shows and
+`ucli build-all` installs. `community` holds reviewed community tools.
+`templates` holds repositories that are not installable tools (project
+templates and deployment kits); `ucli list` and `build-all` never touch them.
 
 ## Quick Start
 
@@ -64,31 +68,26 @@ Maintained by the UCLI Tools team:
 
 Community-contributed tools that have been reviewed and approved:
 - Submit a PR to get your tool listed!
-- [See submission guidelines →](docs/submit-tool.md)
+- See "Adding a Tool" below
 
-## Submitting Your Tool
+## Adding a Tool
 
-1. **Develop your tool** following our [guidelines](docs/tool-guidelines.md)
-2. **Test thoroughly** with `ucli build ./your-tool`
-3. **Submit PR** adding your tool to `apps.community` in `registry/apps.yaml`
-4. **Automated validation** - GitHub Actions validates your tool
-5. **Review process** - Team reviews code, security, documentation
-6. **Approved!** - Tool appears in `ucli list`
-
-[Read full submission guide →](docs/submit-tool.md)
+1. Develop the tool and test it with `ucli build ./your-tool`.
+2. Open a PR that adds an entry to `apps.community` in `registry/apps.yaml`
+   (same fields as the examples below, `version` is the 40-hex commit to pin).
+3. Run `python3 scripts/validate.py` before pushing.
+4. The team reviews the code and the entry. Once merged, the tool appears in `ucli list`.
 
 ## Tool Requirements
 
 All tools must include:
 
-- ✅ `Makefile` - Build instructions with `install` target
-- ✅ `README.md` - Clear documentation and usage examples
-- ✅ Compatible with `ucli build` workflow
-- ✅ No hardcoded secrets or sensitive data
-- ✅ Open source license (Apache 2.0 preferred)
-- ✅ Cross-platform compatibility (Linux/macOS)
-
-[See detailed guidelines →](docs/tool-guidelines.md)
+- A `Makefile` with `build` and `delete` targets that install and remove the
+  tool without sudo (if a tool needs sudo, say so in its README)
+- A `README.md` with usage examples
+- No hardcoded secrets or sensitive data
+- An open source license (Apache 2.0 preferred)
+- Linux and macOS support where possible
 
 ## Registry Format
 
@@ -110,6 +109,8 @@ apps:
       maintainer: username
       submitted_date: 2025-12-22
       status: production
+
+  templates: []   # repositories that are not tools; never listed or built
 ```
 
 ## Real-Time Registry Updates
@@ -198,7 +199,7 @@ Add `UCLI_REGISTRY_UPDATE_TOKEN` to each tool repository:
 We welcome contributions!
 
 - 🐛 [Report issues](https://github.com/ucli-tools/ucli-registry/issues)
-- 📝 [Submit tools](docs/submit-tool.md)
+- 📝 Submit tools: see "Adding a Tool" above
 - 💬 [Join discussions](https://github.com/orgs/ucli-tools/discussions)
 
 ## Support
