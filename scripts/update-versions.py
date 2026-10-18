@@ -5,7 +5,8 @@ Modes:
   --tool NAME   re-pin only NAME to its main tip (repository_dispatch).
                 NAME may be "repo", "owner/repo" or a github.com URL.
   (no --tool)   daily run: re-pin a tool only when its new main commit has
-                check runs and all of them are green. Red, pending or
+                check runs and all of them are green (tools whose only
+                check is the registry trigger job are pinned, labelled untested). Red, pending or
                 unchecked commits are NOT pinned and are listed for review.
 
 Options:
@@ -95,8 +96,12 @@ def latest_commit(repo_url: str, sha: Optional[str] = None) -> Optional[Dict]:
     }
 
 
+def is_trigger(name: str) -> bool:
+    return name.startswith("Trigger registry update")
+
+
 def check_status(repo_url: str, sha: str) -> Tuple[str, str]:
-    """Return (state, detail); state in green|red|pending|unchecked|unknown."""
+    """Return (state, detail); state in green|untested|red|pending|unchecked|unknown."""
     pr = owner_repo(repo_url)
     if not pr:
         return "unknown", "bad repo URL"
@@ -113,6 +118,11 @@ def check_status(repo_url: str, sha: str) -> Tuple[str, str]:
     waiting = [c["name"] for c in runs if c.get("status") != "completed"]
     if waiting:
         return "pending", "not finished: " + ", ".join(waiting)
+    if any("(untested)" in c["name"] for c in runs):
+        return "untested", f"{len(runs)} check run(s) green, but the tool has no tests"
+    real = [c for c in runs if not is_trigger(c["name"]) and c.get("conclusion") == "success"]
+    if not real:
+        return "untested", "only the registry trigger job ran (no tests)"
     return "green", f"{len(runs)} check run(s) green"
 
 
@@ -182,8 +192,8 @@ class RegistryUpdater:
         d["status"] = state
         d["note"] = f"{info['short_hash']}: {info['message'][:60]}; {detail}"
         # A named dispatch is gated by the tool's own tests (slice 4); the daily run
-        # pins only all-green commits.
-        if self.tool is None and state != "green":
+        # pins only all-green commits; untested ones (trigger job only) are pinned and labelled.
+        if self.tool is None and state not in ("green", "untested"):
             d["action"] = "needs review"
             d["new"] = info["hash"]
             return d
@@ -226,7 +236,7 @@ class RegistryUpdater:
         return [d["name"] for d in self.decisions if d["action"] == "re-pinned"]
 
     def pr_body(self) -> str:
-        mode = f"dispatch for `{self.tool}`" if self.tool else "daily run (green commits only)"
+        mode = f"dispatch for `{self.tool}`" if self.tool else "daily run (green and untested commits; red, pending, unchecked kept)"
         lines = ["## Tool pin update", "", f"Trigger: {mode}.", "",
                  "| Tool | Old pin | New pin | Check status | Action |", "|---|---|---|---|---|"]
         for d in self.decisions:

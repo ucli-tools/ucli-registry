@@ -134,6 +134,24 @@ class Tests(Base):
         self.assertIn("untested", body)
         self.assertNotIn("| green |", body)
 
+    def test_daily_trigger_only_is_untested_but_pinned(self):
+        trig = {"name": "Trigger registry update (untested)", "status": "completed", "conclusion": "success"}
+        CHECKS["aaa"] = [trig]
+        CHECKS["bbb"] = [{"name": "Trigger registry update (tested)", "status": "completed", "conclusion": "success"},
+                         {"name": "Tests", "status": "completed", "conclusion": "success"}]
+        CHECKS["ccc"] = [{"name": "Trigger registry update (tested)", "status": "completed", "conclusion": "success"}]
+        u = self.upd()
+        st = {d["name"]: d["status"] for d in u.decisions}
+        self.assertEqual(st, {"aaa": "untested", "bbb": "green", "ccc": "untested"})
+        self.assertEqual(sorted(u.changed()), sorted(NEW))
+        body = u.pr_body()
+        self.assertIn("| untested |", body)
+        self.assertIn("| green |", body)
+
+    def test_untested_with_failing_trigger_is_red(self):
+        CHECKS["aaa"] = [{"name": "Trigger registry update (untested)", "status": "completed", "conclusion": "failure"}]
+        self.assertEqual(self.upd().changed(), [])
+
 
 if __name__ == "__main__":
     unittest.main()
