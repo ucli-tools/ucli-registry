@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 00:22:35 UTC
+  last_updated: 2026-10-18 00:32:22 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -97,7 +97,7 @@ apps:
     - tts
     - audio
     - podcast
-    version: 07d37ffb07cf8168cb4c2a8f32b510c56fcdfa3f
+    version: 400c6c44b582aedc1b0c3b3f21374e349b9891c2
     versioning:
       primary: git_commit
       fallback: semantic
@@ -107,10 +107,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-17 17:30:33 UTC
-      commit_message: 'License: official Apache 2.0 text'
-      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/07d37ffb07cf8168cb4c2a8f32b510c56fcdfa3f
-      updated_at: 2026-10-17 17:31:00 UTC
+      commit_date: 2026-10-18 00:31:11 UTC
+      commit_message: 'ci: send the registry dispatch only after the tests pass'
+      commit_url: https://github.com/ucli-tools/mdaudiobook/commit/400c6c44b582aedc1b0c3b3f21374e349b9891c2
+      updated_at: 2026-10-18 00:32:20 UTC
   - name: convft
     repo: github.com/ucli-tools/convft
     description: A lightweight CLI tool that converts between file structures and
@@ -275,7 +275,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: c2947fafd81535c3abfe9db3fb85b403d2e8c06e
+    version: 2ff3e8466df470aef11295c5848dc0702ec1684c
     versioning:
       primary: git_commit
       fallback: semantic
@@ -285,11 +285,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-12 13:17:33 UTC
-      commit_message: 'fix: edit --paragraph finds its paragraph after an empty one
-        written as one tag; a space it adds is kept (#2)'
-      commit_url: https://github.com/ucli-tools/ms2md/commit/c2947fafd81535c3abfe9db3fb85b403d2e8c06e
-      updated_at: 2026-10-12 13:18:05 UTC
+      commit_date: 2026-10-18 00:31:01 UTC
+      commit_message: 'ci: send the registry dispatch only after the tests pass'
+      commit_url: https://github.com/ucli-tools/docx2md/commit/2ff3e8466df470aef11295c5848dc0702ec1684c
+      updated_at: 2026-10-18 00:32:21 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
