@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 00:44:19 UTC
+  last_updated: 2026-10-18 00:45:09 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -427,7 +427,7 @@ apps:
     - xrdp
     - rdp
     - server
-    version: 0af8b4003b1a3e3d4756a306ea3cb9c43daada18
+    version: c48558b54241e79a8a33a01c9d3298747fda7749
     versioning:
       primary: git_commit
       fallback: semantic
@@ -437,10 +437,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:22:02 UTC
-      commit_message: 'docs: add blank line at end of README'
-      commit_url: https://github.com/ucli-tools/xrdps/commit/0af8b4003b1a3e3d4756a306ea3cb9c43daada18
-      updated_at: 2025-12-23 04:22:14 UTC
+      commit_date: 2026-10-18 00:44:45 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/xrdps/commit/c48558b54241e79a8a33a01c9d3298747fda7749
+      updated_at: 2026-10-18 00:45:09 UTC
   - name: zanominer
     repo: github.com/ucli-tools/zanominer
     description: Zano cryptocurrency mining utilities
