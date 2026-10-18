@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 00:33:42 UTC
+  last_updated: 2026-10-18 00:43:22 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -45,7 +45,7 @@ apps:
     - forgejo
     - gitea
     - github
-    version: 9c56b2bf2903c2184eac1e410b348585f8af514e
+    version: bad4390f218a4fe0a0a28d63d57820a5dddaa231
     versioning:
       primary: git_commit
       fallback: semantic
@@ -55,11 +55,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-01-16 02:44:23 UTC
-      commit_message: 'docs: Update README and help text for diff-all command with
-        --remote option'
-      commit_url: https://github.com/ucli-tools/gits/commit/9c56b2bf2903c2184eac1e410b348585f8af514e
-      updated_at: 2026-01-16 02:44:49 UTC
+      commit_date: 2026-10-18 00:42:56 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/gits/commit/bad4390f218a4fe0a0a28d63d57820a5dddaa231
+      updated_at: 2026-10-18 00:43:18 UTC
   - name: mdtexpdf
     repo: github.com/ucli-tools/mdtexpdf
     description: Convert Markdown documents to PDF with LaTeX quality
@@ -326,7 +325,7 @@ apps:
     - boot
     - images
     - grid
-    version: ef37c28700e1005097e7e43e8d5c4e5cb65cdb39
+    version: a8bd97f246591ffc424a8a82f26da2dda2fc511d
     versioning:
       primary: git_commit
       fallback: semantic
@@ -336,10 +335,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:22:30 UTC
-      commit_message: 'docs: fix missing newline at end of README.md'
-      commit_url: https://github.com/ucli-tools/tfbootmaker/commit/ef37c28700e1005097e7e43e8d5c4e5cb65cdb39
-      updated_at: 2025-12-23 04:22:38 UTC
+      commit_date: 2026-10-18 00:43:09 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/tfbootmaker/commit/a8bd97f246591ffc424a8a82f26da2dda2fc511d
+      updated_at: 2026-10-18 00:43:21 UTC
   - name: tscluster
     repo: github.com/ucli-tools/tscluster
     description: Tailscale VPN Cluster  Resources
