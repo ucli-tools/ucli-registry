@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 00:44:19 UTC
+  last_updated: 2026-10-18 00:46:16 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -401,7 +401,7 @@ apps:
     - system
     - administration
     - automation
-    version: d2d0fffb0f0829de10b8f298a55ff130680e49a7
+    version: 940f53134374b7fa5a59cecdb67ef5911e66d599
     versioning:
       primary: git_commit
       fallback: semantic
@@ -411,10 +411,10 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2025-12-23 04:21:40 UTC
-      commit_message: 'docs: fix trailing newline in README.md'
-      commit_url: https://github.com/ucli-tools/ubuntail/commit/d2d0fffb0f0829de10b8f298a55ff130680e49a7
-      updated_at: 2025-12-23 04:21:45 UTC
+      commit_date: 2026-10-18 00:45:51 UTC
+      commit_message: 'ci: label the registry dispatch untested and name the tool'
+      commit_url: https://github.com/ucli-tools/ubuntail/commit/940f53134374b7fa5a59cecdb67ef5911e66d599
+      updated_at: 2026-10-18 00:46:16 UTC
   - name: xrdps
     repo: github.com/ucli-tools/xrdps
     description: XRDP remote desktop server management
