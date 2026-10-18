@@ -14,11 +14,17 @@ spec.loader.exec_module(uv)
 OLD = "a" * 40
 NEW = {"aaa": "b" * 40, "bbb": "c" * 40, "ccc": "d" * 40}
 CHECKS = {}
+ONMAIN = {}
 
 
 def fake_gh(path):
     parts = path.split("/")
     repo = parts[2]
+    if "/compare/" in path:
+        return {"status": ONMAIN.get(parts[2], "ahead")}
+    if "/commits/" in path and "check-runs" not in path:
+        sha = parts[4]
+        return {"sha": sha, "commit": {"message": "older", "committer": {"date": "2026-10-16T00:00:00Z"}}}
     if "/commits?" in path:
         sha = NEW[repo]
         return [{"sha": sha, "commit": {"message": f"change {repo}", "committer": {"date": "2026-10-17T00:00:00Z"}}}]
@@ -38,6 +44,7 @@ class Base(unittest.TestCase):
         self.reg.write_text(yaml.safe_dump({"metadata": {}, "apps": {"official": apps}}))
         self.addCleanup(self.reg.unlink)
         CHECKS.clear()
+        ONMAIN.clear()
         p = mock.patch.object(uv, "gh_api", fake_gh)
         p.start()
         self.addCleanup(p.stop)
@@ -104,6 +111,28 @@ class Tests(Base):
     def test_named_dispatch_flags_unchecked_but_pins(self):
         body = self.upd(tool="ccc").pr_body()
         self.assertIn("pinned anyway", body)
+
+    def test_dispatch_pins_payload_sha_when_ancestor(self):
+        sha = "e" * 40
+        u = uv.RegistryUpdater(tool="bbb", registry_file=self.reg, sha=sha, tested=True)
+        self.assertTrue(u.run())
+        self.assertEqual(self.pins()["bbb"], sha)
+
+    def test_dispatch_sha_off_main_not_pinned(self):
+        ONMAIN["bbb"] = "diverged"
+        u = uv.RegistryUpdater(tool="bbb", registry_file=self.reg, sha="e" * 40, tested=True)
+        self.assertTrue(u.run())
+        self.assertEqual(u.changed(), [])
+        self.assertIn("not the main tip", u.pr_body())
+
+    def test_tested_false_shows_untested(self):
+        CHECKS["bbb"] = [run("success")]
+        u = uv.RegistryUpdater(tool="bbb", registry_file=self.reg, tested=False)
+        self.assertTrue(u.run())
+        self.assertEqual(u.changed(), ["bbb"])
+        body = u.pr_body()
+        self.assertIn("untested", body)
+        self.assertNotIn("| green |", body)
 
 
 if __name__ == "__main__":

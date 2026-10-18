@@ -63,13 +63,24 @@ def tool_from_payload(payload: Optional[Dict]) -> Optional[str]:
     return normalize_tool(payload.get("name")) or normalize_tool(payload.get("tool"))
 
 
-def latest_commit(repo_url: str) -> Optional[Dict]:
+def is_on_main(repo_url: str, sha: str, default_branch: str = "main") -> bool:
+    """True when sha is the tip of main or an ancestor of it."""
+    o, r = owner_repo(repo_url)
+    data = gh_api(f"repos/{o}/{r}/compare/{sha}...{default_branch}")
+    return bool(data) and data.get("status") in ("identical", "ahead")
+
+
+def latest_commit(repo_url: str, sha: Optional[str] = None) -> Optional[Dict]:
     pr = owner_repo(repo_url)
     if not pr:
         print(f"[ERROR] Invalid GitHub URL format: {repo_url}", file=sys.stderr)
         return None
     o, r = pr
-    data = gh_api(f"repos/{o}/{r}/commits?per_page=1")
+    if sha:
+        data = gh_api(f"repos/{o}/{r}/commits/{sha}")
+        data = [data] if data else None
+    else:
+        data = gh_api(f"repos/{o}/{r}/commits?per_page=1")
     if not data:
         return None
     c = data[0]
@@ -106,7 +117,10 @@ def check_status(repo_url: str, sha: str) -> Tuple[str, str]:
 
 
 class RegistryUpdater:
-    def __init__(self, dry_run=False, verbose=False, tool=None, registry_file=None):
+    def __init__(self, dry_run=False, verbose=False, tool=None, registry_file=None,
+                 sha=None, tested=None):
+        self.sha = sha if (sha and re.fullmatch(r"[0-9a-f]{40}", sha)) else None
+        self.tested = tested
         self.dry_run = dry_run
         self.verbose = verbose
         self.tool = normalize_tool(tool)
@@ -148,9 +162,14 @@ class RegistryUpdater:
         if not repo:
             d["note"] = "no repository URL"
             return d
-        info = latest_commit(repo)
+        use_sha = self.sha if self.tool else None
+        info = latest_commit(repo, use_sha)
         if not info:
-            d["note"] = "could not fetch latest commit"
+            d["note"] = "could not fetch commit" + (f" {use_sha[:8]}" if use_sha else "")
+            return d
+        if use_sha and not is_on_main(repo, use_sha):
+            d["status"] = "off-main"
+            d["note"] = f"{use_sha[:8]} is not the main tip or an ancestor of it"
             return d
         d["new"] = info["hash"]
         if info["hash"] == old:
@@ -158,6 +177,8 @@ class RegistryUpdater:
             d["new"] = old
             return d
         state, detail = check_status(repo, info["hash"])
+        if self.tool and self.tested is False:
+            state, detail = "untested", "tool sent tested:false (" + detail + ")"
         d["status"] = state
         d["note"] = f"{info['short_hash']}: {info['message'][:60]}; {detail}"
         # A named dispatch is gated by the tool's own tests (slice 4); the daily run
@@ -212,7 +233,7 @@ class RegistryUpdater:
             if d["action"] == "kept" and not d["note"].startswith("not an official"):
                 continue
             lines.append(f"| {d['name']} | `{d['old'][:8]}` | `{d['new'][:8]}` | {d['status']} | {d['action']} |")
-        flagged = [d for d in self.decisions if d["status"] in ("red", "unchecked", "pending", "unknown")]
+        flagged = [d for d in self.decisions if d["status"] in ("red", "unchecked", "pending", "unknown", "untested", "off-main")]
         if flagged:
             lines += ["", "### Flagged: red, pending or unchecked commits", ""]
             for d in flagged:
@@ -233,12 +254,17 @@ def main():
     a = p.parse_args()
 
     tool = a.tool
+    sha = tested = None
     if not tool and a.payload_file and Path(a.payload_file).is_file():
         try:
-            tool = tool_from_payload(json.loads(Path(a.payload_file).read_text() or "null"))
+            pl = json.loads(Path(a.payload_file).read_text() or "null")
+            tool = tool_from_payload(pl)
+            if isinstance(pl, dict):
+                sha = pl.get("sha")
+                tested = pl.get("tested") if isinstance(pl.get("tested"), bool) else None
         except json.JSONDecodeError:
             tool = None
-    u = RegistryUpdater(dry_run=a.dry_run, verbose=a.verbose, tool=tool)
+    u = RegistryUpdater(dry_run=a.dry_run, verbose=a.verbose, tool=tool, sha=sha, tested=tested)
     ok = u.run()
     if a.pr_body:
         Path(a.pr_body).write_text(u.pr_body())
