@@ -1,5 +1,5 @@
 #name	repo	commit	kind
-ucli	github.com/ucli-tools/ucli	53a84533431ae59cd68c7dd644176061947165b0	cli
+ucli	github.com/ucli-tools/ucli	84730a9b6c67d338802e11937142e93d7eca90ac	cli
 gits	github.com/ucli-tools/gits	bad4390f218a4fe0a0a28d63d57820a5dddaa231	cli
 mdtexpdf	github.com/ucli-tools/mdtexpdf	b31b49a5fd4b644e8052c00017bff771fe289af1	cli
 mdaudiobook	github.com/ucli-tools/mdaudiobook	400c6c44b582aedc1b0c3b3f21374e349b9891c2	cli
