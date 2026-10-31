@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  last_updated: 2026-10-18 04:04:29 UTC
+  last_updated: 2026-10-31 08:06:49 UTC
   description: Official registry of UCLI Tools - Professional CLI utilities for developers
   versioning_strategy: git_commit
 apps:
@@ -274,7 +274,7 @@ apps:
     - microsoft
     - office
     - markdown
-    version: 7c6623670c10107e86468bc98140a3ea2e68e3f2
+    version: 4b415b8a0027e1a8279e6b70d62b4233c85e0f3a
     versioning:
       primary: git_commit
       fallback: semantic
@@ -284,11 +284,11 @@ apps:
       tracking: true
       auto_cache_refresh: true
     version_info:
-      commit_date: 2026-10-18 00:48:24 UTC
-      commit_message: 'fix: equation counts and custom delimiters; tests follow the
-        cli and frontmatter changes'
-      commit_url: https://github.com/ucli-tools/docx2md/commit/7c6623670c10107e86468bc98140a3ea2e68e3f2
-      updated_at: 2026-10-18 01:52:33 UTC
+      commit_date: 2026-10-28 05:04:53 UTC
+      commit_message: 'locate: real errors exit 2, only no match exits 1; one paragraph
+        search shared with edit'
+      commit_url: https://github.com/ucli-tools/docx2md/commit/4b415b8a0027e1a8279e6b70d62b4233c85e0f3a
+      updated_at: 2026-10-28 05:05:33 UTC
   - name: quickdocu
     repo: github.com/ucli-tools/quickdocu
     description: Quick documentation generation and formatting
