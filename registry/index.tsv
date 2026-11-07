@@ -9,7 +9,7 @@ mcluster	github.com/ucli-tools/mcluster	34f043d9c316a8f9e2fac33ebfde5ca939edf739
 mdepub	github.com/ucli-tools/mdepub	5b374866763a0955ffa7a83c085ec66f4e805434	cli
 mdtodocu	github.com/ucli-tools/mdtodocu	dc5f564f377f6a954637ed63e9ba6b1786f02900	cli
 monerominer	github.com/ucli-tools/monerominer	7e0ed8afe624df31ff04de14affbe6e63493e8f0	cli
-docx2md	github.com/ucli-tools/docx2md	7c6623670c10107e86468bc98140a3ea2e68e3f2	cli
+docx2md	github.com/ucli-tools/docx2md	4b415b8a0027e1a8279e6b70d62b4233c85e0f3a	cli
 quickdocu	github.com/ucli-tools/quickdocu	196582398a21affb6978d17dd32649681a59984d	cli
 tfbootmaker	github.com/ucli-tools/tfbootmaker	a8bd97f246591ffc424a8a82f26da2dda2fc511d	cli
 tscluster	github.com/ucli-tools/tscluster	577481233eb17f90f29ebc895cb01f3bd32d36a6	cli
